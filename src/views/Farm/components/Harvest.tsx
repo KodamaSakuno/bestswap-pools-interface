@@ -23,7 +23,6 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
 
   const { nftSymbol } = useFarm(pid)
   const acc = useAcceleration(pid)
-  console.warn(nftSymbol, acc)
 
   return (
     <Card>
@@ -33,7 +32,7 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
             <CardIcon><span role="img" aria-label="Sushi">🍱</span></CardIcon>
             <Value value={getBalanceNumber(earnings)} />
             <Label text="BEST Earned" />
-            { nftSymbol ? `(+${acc / 10}% with ⛏)` : '' }
+            { nftSymbol && acc > 0 ? `(+${acc / 10}% with ⛏)` : '' }
           </StyledCardHeader>
           <StyledCardActions>
             <Button

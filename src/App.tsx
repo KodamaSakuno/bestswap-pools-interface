@@ -9,12 +9,15 @@ import FarmsProvider from './contexts/Farms'
 import ModalsProvider from './contexts/Modals'
 import TransactionProvider from './contexts/Transactions'
 // import SushiProvider from './contexts/SushiProvider'
+import NFTsProvider from './contexts/NFTs'
+import AcceleratorsProvider from './contexts/Accelerators'
 import useModal from './hooks/useModal'
 import theme from './theme'
 import Farms from './views/Farms'
 import Home from './views/Home'
 // import Stake from './views/Stake'
 import Shop from './views/Shop'
+import NFTs from './views/NFTs'
 
 const App: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -42,6 +45,9 @@ const App: React.FC = () => {
           <Route path="/shop">
             <Shop />
           </Route>
+          <Route path="/nfts">
+            <NFTs />
+          </Route>
         </Switch>
       </Router>
       <Disclaimer />
@@ -60,7 +66,11 @@ const Providers: React.FC = ({ children }) => {
       >
           <TransactionProvider>
             <FarmsProvider>
-              <ModalsProvider>{children}</ModalsProvider>
+              <NFTsProvider>
+                <AcceleratorsProvider>
+                  <ModalsProvider>{children}</ModalsProvider>
+                </AcceleratorsProvider>
+              </NFTsProvider>
             </FarmsProvider>
           </TransactionProvider>
       </UseWalletProvider>

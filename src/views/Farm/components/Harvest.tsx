@@ -6,7 +6,9 @@ import CardContent from '../../../components/CardContent'
 import CardIcon from '../../../components/CardIcon'
 import Label from '../../../components/Label'
 import Value from '../../../components/Value'
+import useAcceleration from '../../../hooks/useAcceleration'
 import useEarnings from '../../../hooks/useEarnings'
+import useFarm from '../../../hooks/useFarm'
 import useReward from '../../../hooks/useReward'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 
@@ -19,6 +21,10 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
   const [pendingTx, setPendingTx] = useState(false)
   const { onReward } = useReward(pid)
 
+  const { nftSymbol } = useFarm(pid)
+  const acc = useAcceleration(pid)
+  console.warn(nftSymbol, acc)
+
   return (
     <Card>
       <CardContent>
@@ -27,6 +33,7 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
             <CardIcon><span role="img" aria-label="Sushi">🍱</span></CardIcon>
             <Value value={getBalanceNumber(earnings)} />
             <Label text="BEST Earned" />
+            { nftSymbol ? `(+${acc / 10}% with ⛏)` : '' }
           </StyledCardHeader>
           <StyledCardActions>
             <Button

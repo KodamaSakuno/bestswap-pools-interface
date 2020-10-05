@@ -18,8 +18,10 @@ const Farms: React.FC = ({ children }) => {
       symbol,
       tokenSymbol,
       stakingTokenAddresses,
+      acceleratorAddresses,
       isWBNB,
       icon,
+      nftSymbol,
     }: any, index) => ({
       pid: index,
       id: symbol,
@@ -27,11 +29,13 @@ const Farms: React.FC = ({ children }) => {
       poolAddress: poolAddresses[chainId],
       stakingToken: symbol,
       stakingTokenAddress: stakingTokenAddresses[chainId],
+      acceleratorAddress: acceleratorAddresses?.[chainId],
       tokenSymbol,
       earnToken: 'best',
       earnTokenAddress: '0x36eb1b02cB7Be3ffA1eE7Bd2A3c7D036002730F7',
       isWBNB,
       icon,
+      nftSymbol: nftSymbol ?? '',
     }),
   );
 

@@ -6,11 +6,15 @@ export const Pools = [
         stakingTokenAddresses: {
             97: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
         },
+        acceleratorAddresses: {
+            97: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+        },
         name: 'BNB',
         symbol: 'BNB',
         tokenSymbol: 'BNB',
         isWBNB: true,
         icon: '🍌',
+        nftSymbol: 'TEST',
     },
     {
         poolAddresses: {

@@ -1,15 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import chef from '../../assets/img/chef.png'
+import BestswapLogo from '../../assets/img/bestswap-logo.png'
 
 const Logo: React.FC = () => {
   return (
     <StyledLogo to="/">
-      <img src={chef} height="32" style={{ marginTop: -4 }} alt="logo" />
-      <StyledText>
-        SushiSwap <MasterChefText>MasterChef</MasterChefText>
-      </StyledText>
+      <img src={BestswapLogo} height="40" style={{ marginTop: -4 }} alt="logo" />
     </StyledLogo>
   )
 }
@@ -25,20 +22,20 @@ const StyledLogo = styled(Link)`
   text-decoration: none;
 `
 
-const StyledText = styled.span`
-  color: ${(props) => props.theme.color.grey[600]};
-  font-family: 'Reem Kufi', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  margin-left: ${(props) => props.theme.spacing[2]}px;
-  @media (max-width: 400px) {
-    display: none;
-  }
-`
+// const StyledText = styled.span`
+//   color: ${(props) => props.theme.color.grey[600]};
+//   font-family: 'Reem Kufi', sans-serif;
+//   font-size: 20px;
+//   font-weight: 700;
+//   letter-spacing: 0.03em;
+//   margin-left: ${(props) => props.theme.spacing[2]}px;
+//   @media (max-width: 400px) {
+//     display: none;
+//   }
+// `
 
-const MasterChefText = styled.span`
-  font-family: 'Kaushan Script', sans-serif;
-`
+// const MasterChefText = styled.span`
+//   font-family: 'Kaushan Script', sans-serif;
+// `
 
 export default Logo

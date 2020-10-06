@@ -29,14 +29,11 @@ const TopBar: React.FC<TopBarProps> = ({ onPresentMobileMenu }) => {
   )
 }
 
-const StyledLogoWrapper = styled.div`
-  width: 260px;
-  @media (max-width: 400px) {
-    width: auto;
-  }
-`
+const StyledLogoWrapper = styled.div``
 
-const StyledTopBar = styled.div``
+const StyledTopBar = styled.div`
+  background-color: rgba(8,8,8,0.25);
+`
 
 const StyledTopBarInner = styled.div`
   align-items: center;

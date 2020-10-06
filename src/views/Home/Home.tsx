@@ -1,53 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import chef from '../../assets/img/chef.png'
-import Button from '../../components/Button'
 import Container from '../../components/Container'
 import Page from '../../components/Page'
-import PageHeader from '../../components/PageHeader'
-import Spacer from '../../components/Spacer'
 import Balances from './components/Balances'
 
 const Home: React.FC = () => {
   return (
     <Page>
-      <PageHeader
-        icon={<img src={chef} height={120} alt="icon" />}
-        title="MasterChef is Ready"
-        subtitle="Stake Uniswap LP tokens to claim your very own yummy SUSHI!"
-      />
-
-      <Container>
-        <Balances />
-      </Container>
-      <Spacer size="lg" />
-      <StyledInfo>
-        <span role="img" aria-label="emoji">🏆</span><b>Pro Tip</b>: SUSHI-ETH UNI-V2 LP token pool yields TWICE more token
-        rewards per block.
-      </StyledInfo>
-      <Spacer size="lg" />
-      <div
-        style={{
-          margin: '0 auto',
-        }}
-      >
-        <Button text="🔪 See the Menu" to="/farms" variant="secondary" />
-      </div>
+      <StyledContainer>
+        <Container>
+          <Balances />
+        </Container>
+      </StyledContainer>
     </Page>
   )
 }
 
-const StyledInfo = styled.h3`
-  color: ${(props) => props.theme.color.grey[500]};
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-
-  > b {
-    color: ${(props) => props.theme.color.grey[600]};
-  }
+const StyledContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
 
 export default Home

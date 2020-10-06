@@ -5,6 +5,10 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./assets/img/bestswap-bg.png');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: repeat-y;
 }
 
 code {

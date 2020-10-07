@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Button from '../../../components/Button'
 import Card from '../../../components/Card'
 import CardContent from '../../../components/CardContent'
-import CardIcon from '../../../components/CardIcon'
 import Label from '../../../components/Label'
 import Value from '../../../components/Value'
 import useAcceleration from '../../../hooks/useAcceleration'
@@ -11,6 +10,8 @@ import useEarnings from '../../../hooks/useEarnings'
 import useFarm from '../../../hooks/useFarm'
 import useReward from '../../../hooks/useReward'
 import { getBalanceNumber } from '../../../utils/formatBalance'
+import CardIcon from './CardIcon'
+import FarmIcon from '../../../assets/img/farm-icon.png'
 
 interface HarvestProps {
   pid: number
@@ -29,7 +30,9 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
-            <CardIcon><span role="img" aria-label="Sushi">🍱</span></CardIcon>
+            <CardIcon>
+              <StyledImageIcon src={FarmIcon} alt="icon"/>
+            </CardIcon>
             <Value value={getBalanceNumber(earnings)} />
             <Label text="BEST Earned" />
             { nftSymbol && acc > 0 ? `(+${acc / 10}% with ⛏)` : '' }
@@ -74,6 +77,12 @@ const StyledCardContentInner = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
+`
+
+const StyledImageIcon = styled.img`
+  display: block;
+  width: 100%;
+  height: 100%;
 `
 
 export default Harvest

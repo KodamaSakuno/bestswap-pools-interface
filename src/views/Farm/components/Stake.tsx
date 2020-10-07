@@ -6,7 +6,6 @@ import { Contract } from 'web3-eth-contract'
 import Button from '../../../components/Button'
 import Card from '../../../components/Card'
 import CardContent from '../../../components/CardContent'
-import CardIcon from '../../../components/CardIcon'
 import IconButton from '../../../components/IconButton'
 import { AddIcon } from '../../../components/icons'
 import Label from '../../../components/Label'
@@ -21,6 +20,8 @@ import useUnstake from '../../../hooks/useUnstake'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 import DepositModal from './DepositModal'
 import WithdrawModal from './WithdrawModal'
+import CardIcon from './CardIcon'
+import HarvestIcon from '../../../assets/img/harvest-icon.png'
 
 interface StakeProps {
   lpContract: Contract
@@ -78,7 +79,9 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName, isWBNB }) => 
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
-            <CardIcon><span role="img" aria-label="Card icon">👨🏻‍🍳</span></CardIcon>
+            <CardIcon>
+              <StyledImageIcon src={HarvestIcon} alt="icon"/>
+            </CardIcon>
             <Value value={getBalanceNumber(stakedBalance)} />
             <Label text={`${tokenName} Tokens Staked`} />
           </StyledCardHeader>
@@ -132,6 +135,12 @@ const StyledCardContentInner = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
+`
+
+const StyledImageIcon = styled.img`
+  display: block;
+  width: 100%;
+  height: 100%;
 `
 
 export default Stake

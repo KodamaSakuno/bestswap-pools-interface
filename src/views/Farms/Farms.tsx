@@ -2,11 +2,9 @@ import React from 'react'
 import { Route, Switch, useRouteMatch } from 'react-router-dom'
 import { useWallet } from 'use-wallet'
 
-import chef from '../../assets/img/chef.png'
-
 import Button from '../../components/Button'
 import Page from '../../components/Page'
-import PageHeader from '../../components/PageHeader'
+import PageHeader from './components/PageHeader'
 import WalletProviderModal from '../../components/WalletProviderModal'
 
 import useModal from '../../hooks/useModal'
@@ -25,11 +23,7 @@ const Farms: React.FC = () => {
         {account ? (
           <>
             <Route exact path={path}>
-              <PageHeader
-                icon={<img src={chef} height="120" alt="icon" />}
-                subtitle="Earn SUSHI tokens by staking Uniswap V2 LP Tokens."
-                title="Select Your Favorite Dishes"
-              />
+              <PageHeader title="Stake tokens to stack BEST" subtitle="BEST PRICE: $1.088" />
               <FarmCards />
             </Route>
             <Route path={`${path}/:farmId`}>

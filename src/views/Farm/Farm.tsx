@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
-import PageHeader from '../../components/PageHeader'
+import PageHeader from './components/PageHeader'
 import Spacer from '../../components/Spacer'
 import useFarm from '../../hooks/useFarm'
 // import useRedeem from '../../hooks/useRedeem'
@@ -12,6 +12,8 @@ import useFarm from '../../hooks/useFarm'
 import { getContract } from '../../utils/erc20'
 import Harvest from './components/Harvest'
 import Stake from './components/Stake'
+import FarmSingleTokenIcon from './components/FarmSingleTokenIcon'
+import FarmPairTokenIcon from './components/FarmPairTokenIcon'
 
 const Farm: React.FC = () => {
   const { farmId } = useParams<{ farmId?: string}>()
@@ -20,7 +22,6 @@ const Farm: React.FC = () => {
     stakingToken,
     stakingTokenAddress,
     earnToken,
-    name,
     isWBNB,
   } = useFarm(farmId) || {
     pid: 0,
@@ -55,9 +56,8 @@ const Farm: React.FC = () => {
   return (
     <>
       <PageHeader
-        icon=""
-        subtitle={`Deposit ${lpTokenName}  Tokens and earn ${earnTokenName}`}
-        title={name}
+        icon={lpTokenName.includes('/') ? <FarmPairTokenIcon /> : <FarmSingleTokenIcon />}
+        title={`Deposit ${lpTokenName} Tokens and earn ${earnTokenName}`}
       />
       <StyledFarm>
         <StyledCardsWrapper>
@@ -74,11 +74,6 @@ const Farm: React.FC = () => {
             />
           </StyledCardWrapper>
         </StyledCardsWrapper>
-        <Spacer size="lg" />
-        <StyledInfo>
-          <span role="img" aria-label="Star">⭐️</span> Every time you stake and unstake LP tokens, the contract will
-          automagically harvest SUSHI rewards for you!
-        </StyledInfo>
         <Spacer size="lg" />
       </StyledFarm>
     </>

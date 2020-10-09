@@ -22,6 +22,7 @@ const Farms: React.FC = ({ children }) => {
       isWBNB,
       icon,
       nftSymbol,
+      magnification,
     }: any, index) => ({
       pid: index,
       id: symbol.replace('/', '-'),
@@ -36,6 +37,7 @@ const Farms: React.FC = ({ children }) => {
       isWBNB,
       icon,
       nftSymbol: nftSymbol ?? '',
+      magnification,
     }),
   );
 

@@ -14,6 +14,7 @@ export interface Farm {
   icon: string,
   acceleratorAddress: string,
   nftSymbol: string,
+  magnification: number,
 }
 
 export interface FarmsContext {

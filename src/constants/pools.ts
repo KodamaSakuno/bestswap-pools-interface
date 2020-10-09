@@ -10,7 +10,8 @@ export const Pools = [
         symbol: 'BNB',
         tokenSymbol: 'BNB',
         isWBNB: true,
-        icon: '🍌',
+        icon: 'bnb',
+        magnification: 1,
     },
     {
         poolAddresses: {
@@ -23,7 +24,8 @@ export const Pools = [
         symbol: 'ETH',
         tokenSymbol: 'ETH',
         isWBNB: false,
-        icon: '🍒',
+        icon: 'eth',
+        magnification: 1,
     },
     {
         poolAddresses: {
@@ -36,7 +38,8 @@ export const Pools = [
         symbol: 'BTCB',
         tokenSymbol: 'BTCB',
         isWBNB: false,
-        icon: '🍐',
+        icon: 'btcb',
+        magnification: 1,
     },
     {
         poolAddresses: {
@@ -49,7 +52,8 @@ export const Pools = [
         symbol: 'USDT',
         tokenSymbol: 'USDT',
         isWBNB: false,
-        icon: '🍋',
+        icon: 'usdt',
+        magnification: 1,
     },
     {
         poolAddresses: {
@@ -65,8 +69,9 @@ export const Pools = [
         symbol: 'BUSD',
         tokenSymbol: 'BUSD',
         isWBNB: false,
-        icon: '🍑',
+        icon: 'busd',
         nftSymbol: 'TEST',
+        magnification: 1,
     },
     {
         poolAddresses: {
@@ -79,7 +84,8 @@ export const Pools = [
         symbol: 'BUSD/BNB',
         tokenSymbol: 'BUSD/BNB',
         isWBNB: false,
-        icon: '🍑',
+        icon: 'bnb-busd',
+        magnification: 2,
     },
     {
         poolAddresses: {
@@ -92,7 +98,8 @@ export const Pools = [
         symbol: 'ETH/BNB',
         tokenSymbol: 'ETH/BNB',
         isWBNB: false,
-        icon: '🍑',
+        icon: 'eth-busd',
+        magnification: 2,
     },
     {
         poolAddresses: {
@@ -105,6 +112,7 @@ export const Pools = [
         symbol: 'USDT/BNB',
         tokenSymbol: 'USDT/BNB',
         isWBNB: false,
-        icon: '🍑',
+        icon: 'usdt-busd',
+        magnification: 2,
     },
 ]

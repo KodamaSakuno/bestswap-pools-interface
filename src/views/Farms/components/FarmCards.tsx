@@ -6,7 +6,6 @@ import { useWallet } from 'use-wallet'
 import Button from '../../../components/Button'
 import Card from '../../../components/Card'
 import CardContent from '../../../components/CardContent'
-import CardIcon from '../../../components/CardIcon'
 import Loader from '../../../components/Loader'
 import Spacer from '../../../components/Spacer'
 import { Farm } from '../../../contexts/Farms'
@@ -94,6 +93,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   const [startTime, setStartTime] = useState(0)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [harvestable, setHarvestable] = useState(0)
+  const [imagePath, setImagePath ] = useState('')
 
   const { account } = useWallet()
   const { stakingTokenAddress } = farm
@@ -111,7 +111,17 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
     )
   }
 
+  const loadTokenImage = (name: string): void => {
+    import(`../../../assets/img/token/${name}.png`).then(path => {
+      console.log('FarmCards::FarmCard:loadTokenImage path:', path)
+      setImagePath(path.default)
+    })
+  }
+
+  const isPairToken = farm.icon.includes('-')
+
   useEffect(() => {
+    loadTokenImage(farm.icon)
     async function fetchEarned() {
       if (sushi) return
       const earned = await getEarned(
@@ -124,7 +134,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
     if (sushi && account) {
       fetchEarned()
     }
-  }, [sushi, stakingTokenAddress, account, setHarvestable])
+  }, [sushi, stakingTokenAddress, account, setHarvestable, farm.icon])
 
   const poolActive = true // startTime * 1000 - Date.now() <= 0
 
@@ -134,11 +144,27 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
       <Card>
         <CardContent>
           <StyledContent>
-            <CardIcon>{farm.icon}</CardIcon>
-            <StyledTitle>{farm.name}</StyledTitle>
+            <StyledMagnification>{farm.magnification}X</StyledMagnification>
+            <StyledCardIcon style={ isPairToken ? { height: '40px', marginTop: '30px' } : {}}>
+              <StyledIconImage style={ isPairToken ? { height: '40px' } : {}} src={imagePath} alt="token-icon" />
+            </StyledCardIcon>
             <StyledDetails>
-              <StyledDetail>Deposit {farm.stakingToken.toUpperCase()}</StyledDetail>
-              <StyledDetail>Earn {farm.earnToken.toUpperCase()}</StyledDetail>
+              <StyledDetail>
+                <StyledDetailSpan>Deposit</StyledDetailSpan>
+                <StyledDetailSpan>
+                  {farm.stakingToken.toUpperCase()}
+                </StyledDetailSpan>
+              </StyledDetail>
+              <StyledDetail>
+                <StyledDetailSpan>Earn</StyledDetailSpan>
+                <StyledDetailSpan>
+                  {farm.earnToken.toUpperCase()}
+                </StyledDetailSpan>
+              </StyledDetail>
+              <StyledDetail>
+                <StyledDetailSpan>APY</StyledDetailSpan>
+                <StyledDetailSpan>500.38%</StyledDetailSpan>
+              </StyledDetail>
             </StyledDetails>
             <Spacer />
             <Button
@@ -153,30 +179,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
                 />
               )}
             </Button>
-            {/* <StyledInsight>
-              <span>APY</span>
-              <span>
-                {farm.apy
-                  ? `${farm.apy
-                      .times(new BigNumber(100))
-                      .toNumber()
-                      .toLocaleString('en-US')
-                      .slice(0, -1)}%`
-                  : 'Loading ...'}
-              </span>
-              <span>
-                {farm.tokenAmount
-                  ? (farm.tokenAmount.toNumber() || 0).toLocaleString('en-US')
-                  : '-'}{' '}
-                {farm.tokenSymbol}
-              </span>
-              <span>
-                {farm.wethAmount
-                  ? (farm.wethAmount.toNumber() || 0).toLocaleString('en-US')
-                  : '-'}{' '}
-                ETH
-              </span>
-            </StyledInsight> */}
+            <Spacer />
+            <StyledDetails style={{ marginTop: 0 }}>
+              <StyledDetail>
+                <StyledDetailSpan>Total Liquidity</StyledDetailSpan>
+                <StyledDetailSpan>$41,270,688</StyledDetailSpan>
+              </StyledDetail>
+            </StyledDetails>
           </StyledContent>
         </CardContent>
       </Card>
@@ -185,16 +194,15 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 }
 
 const RainbowLight = keyframes`
-
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 `
 
 const StyledCardAccent = styled.div`
@@ -255,18 +263,34 @@ const StyledCardWrapper = styled.div`
   position: relative;
 `
 
-const StyledTitle = styled.h4`
-  color: ${(props) => props.theme.color.grey[600]};
-  font-size: 24px;
-  font-weight: 700;
-  margin: ${(props) => props.theme.spacing[2]}px 0 0;
-  padding: 0;
+const StyledCardIcon = styled.div`
+  height: 70px;
+  width: auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto ${props => props.theme.spacing[3]}px;
 `
+
+const StyledIconImage = styled.img`
+  height: 70px;
+  width: auto;
+  display: block;
+`
+
+// const StyledTitle = styled.h4`
+//   color: ${(props) => props.theme.color.grey[600]};
+//   font-size: 24px;
+//   font-weight: 700;
+//   margin: ${(props) => props.theme.spacing[2]}px 0 0;
+//   padding: 0;
+// `
 
 const StyledContent = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  position: relative;
 `
 
 const StyledSpacer = styled.div`
@@ -275,12 +299,39 @@ const StyledSpacer = styled.div`
 `
 
 const StyledDetails = styled.div`
+  width: 100%;
   margin-top: ${(props) => props.theme.spacing[2]}px;
-  text-align: center;
 `
 
 const StyledDetail = styled.div`
-  color: ${(props) => props.theme.color.grey[500]};
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+`
+
+const StyledDetailSpan = styled.span`
+  display: inline-block;
+  font-weight: 400;
+  &:last-of-type {
+    font-weight: 600;
+  }
+`
+
+const StyledMagnification = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #F7CA2D;
+  border-radius: 13px;
+  width: 52px;
+  height: 24px;
+  line-height: 24px;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
 `
 
 // const StyledInsight = styled.div`

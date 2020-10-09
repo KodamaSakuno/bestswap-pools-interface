@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { provider } from 'web3-core'
 
-import BigNumber from 'bignumber.js'
+// import BigNumber from 'bignumber.js'
 import { useWallet } from 'use-wallet'
 
 // import { getEarned, getMasterChefContract } from '../sushi/utils'

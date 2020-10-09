@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
 import { getContract } from '../utils/nfts'
@@ -10,7 +10,7 @@ const useApproveNFT = (symbol: string, to: string) => {
 
   const contract = useMemo(() => {
     return getContract(ethereum as provider, nft.address)
-  }, [ethereum])
+  }, [ethereum, nft.address])
 
   const handleApprove = useCallback(async (tokenId: string) => {
     try {

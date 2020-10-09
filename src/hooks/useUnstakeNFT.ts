@@ -10,7 +10,7 @@ export default (symbol: string) => {
 
     const contract = useMemo(() => {
         return getAcceleratorContract(ethereum as provider, accelerator.address)
-    }, [account, ethereum])
+    }, [accelerator.address, ethereum])
 
     const handleUnstake = useCallback(
         async () => {
@@ -22,7 +22,7 @@ export default (symbol: string) => {
           console.log(txHash)
           return txHash
         },
-    [account, contract, accelerator])
+    [account, contract])
 
     return { onUnstake: handleUnstake }
 }

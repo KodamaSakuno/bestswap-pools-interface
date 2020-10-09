@@ -11,12 +11,12 @@ export default (symbol: string) => {
     const accelerator = useAccelerator(symbol)
     const accContract = useMemo(() => {
         return getAcceleratorContract(ethereum as provider, accelerator.address)
-    }, [account, ethereum, accelerator])
+    }, [ethereum, accelerator])
 
     const nft = useNFT(symbol)
     const contract = useMemo(() => {
         return getContract(ethereum as provider, nft.address)
-    }, [account, ethereum, nft])
+    }, [ethereum, nft])
 
     const [staked, setStaked] = useState('')
     const [quality, setQuality] = useState('')

@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import Label from '../../../components/Label'
 import Spacer from '../../../components/Spacer'
-import SushiIcon from '../../../components/SushiIcon'
 import useAllEarnings from '../../../hooks/useAllEarnings'
 import useAllStakedValue from '../../../hooks/useAllStakedValue'
 import useFarms from '../../../hooks/useFarms'
@@ -18,6 +17,7 @@ import { getTotalSupply } from '../../../utils/erc20'
 import Card from './Card'
 import CardContent from './CardContent'
 import Value from './Value'
+import BestIcon from './BestIcon'
 
 const PendingRewards: React.FC = () => {
   const [start, setStart] = useState(0)
@@ -97,7 +97,7 @@ const Balances: React.FC = () => {
               <div style={{ flex: 1 }}>
                 <Label text="Your BEST Balance" />
                 <StyledBalanceWrapper>
-                  <SushiIcon />
+                  <BestIcon />
                   <Spacer size='md' />
                   <Value
                     value={!!account ? getBalanceNumber(sushiBalance) : 'Locked'}

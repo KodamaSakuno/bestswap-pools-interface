@@ -29,11 +29,11 @@ const Button: React.FC<ButtonProps> = ({
   let buttonColor: string
   switch (variant) {
     case 'secondary':
-      buttonColor = '#000000'
+      buttonColor = '#F5C829'
       break
     case 'default':
     default:
-      buttonColor = '#000000'
+      buttonColor = '#F5C829'
   }
 
   let boxShadow: string
@@ -95,7 +95,7 @@ interface StyledButtonProps {
 
 const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
-  background-color: ${props => props.theme.color.yellow};
+  background-color: #000000;
   border: 0;
   border-radius: 3px;
   box-shadow: ${props => props.boxShadow};
@@ -112,7 +112,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   pointer-events: ${props => !props.disabled ? undefined : 'none'};
   width: 100%;
   &:hover {
-    background-color: ${props => lighten(0.05, props.theme.color.yellow)};
+    background-color: ${props => lighten(0.05, '#000000')};
   }
 `
 

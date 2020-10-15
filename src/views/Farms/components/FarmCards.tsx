@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import styled, { keyframes } from 'styled-components'
 import { useWallet } from 'use-wallet'
-import Button from '../../../components/Button'
-import Card from '../../../components/Card'
+import BlackButton from '../../../components/Button/BlackButton'
+import Card from '../../Home/components/Card'
 import CardContent from '../../../components/CardContent'
 import Loader from '../../../components/Loader'
 import Spacer from '../../../components/Spacer'
@@ -122,7 +122,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
     })
   }
 
-  const isPairToken = farm.icon.includes('-')
+  // const isPairToken = farm.icon.includes('-')
 
   useEffect(() => {
     loadTokenImage(farm.icon)
@@ -149,8 +149,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
         <CardContent>
           <StyledContent>
             <StyledMagnification>{farm.magnification}X</StyledMagnification>
-            <StyledCardIcon style={ isPairToken ? { height: '40px', marginTop: '30px' } : {}}>
-              <StyledIconImage style={ isPairToken ? { height: '40px' } : {}} src={imagePath} alt="token-icon" />
+            <StyledCardIcon>
+              <StyledIconImage src={imagePath} alt="token-icon" />
             </StyledCardIcon>
             <StyledDetails>
               <StyledDetail>
@@ -171,7 +171,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
               </StyledDetail>
             </StyledDetails>
             <Spacer />
-            <Button
+            <BlackButton
               disabled={!poolActive}
               text={poolActive ? 'Select' : undefined}
               to={`/farms/${farm.id}`}
@@ -182,7 +182,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
                   renderer={renderer}
                 />
               )}
-            </Button>
+            </BlackButton>
             <Spacer />
             <StyledDetails style={{ marginTop: 0 }}>
               <StyledDetail>
@@ -273,7 +273,7 @@ const StyledCardIcon = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 0 auto ${props => props.theme.spacing[3]}px;
+  margin: ${props => props.theme.spacing[4]}px auto ${props => props.theme.spacing[3]}px;
 `
 
 const StyledIconImage = styled.img`
@@ -327,8 +327,8 @@ const StyledMagnification = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #F7CA2D;
-  border-radius: 13px;
+  background-color: #FEC025;
+  border-radius: 3px;
   width: 52px;
   height: 24px;
   line-height: 24px;

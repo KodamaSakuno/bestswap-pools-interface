@@ -84,7 +84,7 @@ export const Pools = [
         symbol: 'BUSD/BNB',
         tokenSymbol: 'BUSD/BNB',
         isWBNB: false,
-        icon: 'bnb-busd',
+        icon: 'busd-bnb',
         magnification: 2,
     },
     {
@@ -98,7 +98,7 @@ export const Pools = [
         symbol: 'ETH/BNB',
         tokenSymbol: 'ETH/BNB',
         isWBNB: false,
-        icon: 'eth-busd',
+        icon: 'eth-bnb',
         magnification: 2,
     },
     {
@@ -112,7 +112,7 @@ export const Pools = [
         symbol: 'USDT/BNB',
         tokenSymbol: 'USDT/BNB',
         isWBNB: false,
-        icon: 'usdt-busd',
+        icon: 'usdt-bnb',
         magnification: 2,
     },
 ]

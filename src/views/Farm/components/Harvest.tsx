@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Button from '../../../components/Button'
-import Card from '../../../components/Card'
+import BlackButton from '../../../components/Button/BlackButton'
+import Card from '../../../components/Card/TransCard'
 import CardContent from '../../../components/CardContent'
 import Label from '../../../components/Label'
 import Value from '../../../components/Value'
@@ -38,7 +38,7 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
             { nftSymbol && acc > 0 ? `(+${acc / 10}% with ⛏)` : '' }
           </StyledCardHeader>
           <StyledCardActions>
-            <Button
+            <BlackButton
               disabled={!earnings.toNumber() || pendingTx}
               text={pendingTx ? 'Collecting BEST' : 'Harvest'}
               onClick={async () => {

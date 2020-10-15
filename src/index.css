@@ -1,12 +1,12 @@
 body {
-  background: #fff8ee;
+  background: #360904;
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./assets/img/bestswap-bg.png');
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
   background-repeat: repeat-y;
 }

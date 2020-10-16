@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import useOpenSea from './useOpenSea'
-import { VestNFTAddress } from '../../constants/vestNFTs'
-import { AxiosResponse } from 'axios'
+import { /* VestNFTAddress, */ VestNFTList } from '../../constants/vestNFTs'
+// import { AxiosResponse } from 'axios'
 
 export interface NftAssetsContract {
   address: string
@@ -45,18 +45,21 @@ const useFetchAssets = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response: AxiosResponse<NftAssetsPromise> = await request({
-        url: 'assets/',
-        method: 'GET',
-        params: {
-          asset_contract_address: VestNFTAddress,
-          order_direction: 'asc',
-          offset: 0,
-          limit: 50,
-        },
-      })
+      // const response: AxiosResponse<NftAssetsPromise> = await request({
+      //   url: 'assets/',
+      //   method: 'GET',
+      //   params: {
+      //     asset_contract_address: VestNFTAddress,
+      //     order_direction: 'asc',
+      //     offset: 0,
+      //     limit: 50,
+      //   },
+      // })
+      const staticData: NftAssetsPromise = {
+        assets: VestNFTList
+      }
 
-      const data = response.data
+      const data = staticData
 
       if (data.assets) {
         setAssets(data.assets)

@@ -16,6 +16,7 @@ import VESTCards from './components/VestCards'
 interface MetadataWithStatus extends VestMetadata {
   rewardStatus: boolean
   tokenId: number
+  claimId: number
 }
 
 const MyNFTPage: React.FC = () => {
@@ -41,6 +42,7 @@ const MyNFTPage: React.FC = () => {
       ...data,
       rewardStatus: rewardStatus[i],
       tokenId: tokenList[i].tokenId,
+      claimId: i
     }
   })
 

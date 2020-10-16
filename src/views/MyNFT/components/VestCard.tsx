@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { lighten } from 'polished'
 import LevelImage from '../../../assets/img/vestnft/vestnft-card-level.png'
 import { VestMetadata } from './types'
 import capitalize from '../../../utils/capitalize'
+import useRefReward from '../../../hooks/useRefReward'
 
 export interface VESTCardProps {
-  info: VestMetadata
+  info: VestMetadata & { rewardStatus?: boolean, claimId?: number }
 }
 
 interface StyledCardWrapperProps {
@@ -13,7 +15,7 @@ interface StyledCardWrapperProps {
 }
 
 const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
-  const { image, name, attributes } = info
+  const { image, name, attributes, rewardStatus, claimId } = info
   const bestCost = attributes.find(trait => trait.trait_type === 'Vest Value').value
   const level = attributes.find(trait => trait.trait_type === 'Level').value.toString()
   const type = attributes.find(trait => trait.trait_type === 'Type').value.toString()
@@ -38,6 +40,8 @@ const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
     }
   }
 
+  const { onClaimNFT } = useRefReward()
+
   useEffect(() => {
     loadNFTImage(image)
   }, [image])
@@ -51,6 +55,15 @@ const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
       <StyledImage src={imagePath} alt='card-image' />
       <StyledName>{name.toUpperCase()}</StyledName>
       <StyledCost>{bestCost} BEST</StyledCost>
+      {
+        (type === 'referral' && rewardStatus) && (
+          <StyledButton
+            onClick={() => { onClaimNFT(claimId) }}
+          >
+            Receive
+          </StyledButton>
+        )
+      }
     </StyledCardWrapper>
   )
 }
@@ -122,24 +135,25 @@ const StyledCost = styled.div`
   text-align: center;
 `
 
-// const StyledButton = styled.button`
-//   display: block;
-//   width: 146px;
-//   height: 34px;
-//   color: #F5C523;
-//   background-color: #000000;
-//   font-size: 10px;
-//   font-weight: 600;
-//   line-height: 1;
-//   text-align: center;
-//   border-radius: 5px;
-//   margin: 0 auto;
-//   border: 0;
-//   cursor: pointer;
-//   outline: none;
-//   &:hover {
-//     background-color: ${lighten(0.15, '#000000')};
-//   }
-// `
+const StyledButton = styled.button`
+  display: block;
+  width: 146px;
+  height: 34px;
+  color: #F5C523;
+  background-color: #000000;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  border-radius: 3px;
+  margin: 0 auto;
+  margin-top: 14px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background-color: ${lighten(0.15, '#000000')};
+  }
+`
 
 export default VESTCard

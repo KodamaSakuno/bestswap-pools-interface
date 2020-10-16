@@ -34,7 +34,7 @@ const VestNFTPage: React.FC = () => {
 
   return (
     <StyledPageWrapper>
-      <Page>
+      <Page showBgColor={false}>
         <StyledContainer>
           <Switcher switcherList={assetsTypeList} onChange={handleSwitcherChange} />
           <VESTCards selectedList={selectedList} />
@@ -45,7 +45,7 @@ const VestNFTPage: React.FC = () => {
 }
 
 const StyledPageWrapper = styled.div`
-  background-color: rgba(8,8,8,0.25);
+  background-color: rgba(8,8,8,0.4);
   width: 100%;
   height: 100%;
   position: absolute;

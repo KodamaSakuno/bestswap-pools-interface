@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import capitalize from '../../../utils/capitalize'
 
@@ -13,11 +13,18 @@ export interface SwitcherItemProps {
 
 const Switcher: React.FC<SwitcherProps> = (props) => {
   const { switcherList, onChange } = props
-  const [activeItem, setActiveItem] = useState('holder')
+  const [activeItem, setActiveItem] = useState('')
   const handleSwitcherItemChange = (name: string) => {
+    console.log('Switcher::handleSwitcherItemChange name:', name)
     setActiveItem(name)
     onChange(name)
   }
+
+  useEffect(() => {
+    if (switcherList.length) {
+      setActiveItem(switcherList[0])
+    }
+  }, [switcherList])
 
   return (
     <StyledSwitcherWrapper>

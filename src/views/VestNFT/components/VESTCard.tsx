@@ -1,24 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { lighten } from 'polished'
-import { VestNFT } from '../../../constants/vestNFTs'
+import { NftAssets } from '../../../hooks/nft/useFetchAssets'
 
 export interface VESTCardProps {
-  info: Omit<VestNFT, 'attributes'>
+  info: NftAssets
 }
 
 const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
-  const { displayName, bestCost, image, levelLong, levelShort } = info
-  const [imagePath, setImagePath] = useState('')
-  const loadImage = (name: string): void => {
-    import(`../../../assets/img/vestnft/${name}`).then(path => {
-      console.log('FarmCards::FarmCard:loadTokenImage path:', path)
-      setImagePath(path.default)
-    })
-  }
-  useEffect(() => {
-    loadImage(image)
-  })
+  const { image_url, traits, name } = info
+  const bestCost = traits.find(trait => trait.trait_type === 'Best Value').value || 0
 
   return (
     <StyledCardWrapper>
@@ -26,13 +17,13 @@ const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
         <StyledTriangleBig />
         <StyledTriangleSmall />
         <StyledLevelWrapper>
-          <StyledLevelText>{levelLong}</StyledLevelText>
-          <StyledLevelText>{levelShort}</StyledLevelText>
+          {/* <StyledLevelText>{levelLong}</StyledLevelText>
+          <StyledLevelText>{levelShort}</StyledLevelText> */}
         </StyledLevelWrapper>
       </div>
-      <StyledImage src={imagePath} alt='card-image' />
+      <StyledImage src={image_url} alt='card-image' />
       <StyledCost>{bestCost} BEST</StyledCost>
-      <StyledButton>{displayName}</StyledButton>
+      <StyledButton>{name}</StyledButton>
     </StyledCardWrapper>
   )
 }

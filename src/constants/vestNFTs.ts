@@ -174,3 +174,5 @@ export const VestNFTs: VestNFTs = {
     },
   ],
 }
+
+export const VestNFTAddress = '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf'

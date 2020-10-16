@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import VESTCard from './VESTCard'
-import { VestNFT } from '../../../constants/vestNFTs'
+import { NftAssets } from '../../../hooks/nft/useFetchAssets'
 
 export interface VESTCardsProps {
-  selectedList: Array<VestNFT>
+  selectedList: Array<NftAssets>
 }
 
 const VESTCards: React.FC<VESTCardsProps> = ({ selectedList }) => {
-  const rows = selectedList.reduce<Array<Array<VestNFT>>>(
+  const rows = selectedList.reduce<Array<Array<NftAssets>>>(
     (cardRows, card) => {
       const newCardRows = [...cardRows]
       if (newCardRows[newCardRows.length - 1].length === 3) {

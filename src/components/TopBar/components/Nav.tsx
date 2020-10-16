@@ -17,7 +17,7 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/referral">
         Referral
       </StyledLink>
-      <StyledLink exact activeClassName="active" to="/shop">
+      {/* <StyledLink exact activeClassName="active" to="/shop">
         Shop
       </StyledLink>
       <StyledLink exact activeClassName="active" to="/nfts">
@@ -28,7 +28,7 @@ const Nav: React.FC = () => {
         target="_blank"
       >
         About
-      </StyledAbsoluteLink>
+      </StyledAbsoluteLink> */}
     </StyledNav>
   )
 }

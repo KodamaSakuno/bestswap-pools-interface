@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { lighten } from 'polished'
 import { NftAssets } from '../../../hooks/nft/useFetchAssets'
 import LevelImage from '../../../assets/img/vestnft/vestnft-card-level.png'
 
@@ -14,7 +13,7 @@ interface StyledCardWrapperProps {
 
 const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
   const { image_url, traits, name, background_color } = info
-  const bestCost = traits.find(trait => trait.trait_type === 'Best Value').value || 0
+  const bestCost = traits.find(trait => trait.trait_type === 'Vest Value').value || 0
   const level = traits.find(trait => trait.trait_type === 'Level').value || '1'
   const displayLevel = (level: string): string => {
     const _level = Number(level)

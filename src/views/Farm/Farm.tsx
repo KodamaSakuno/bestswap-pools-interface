@@ -62,9 +62,7 @@ const Farm: React.FC = () => {
   }, [earnToken])
 
   return (
-    <StyledPage>
-      <Spacer size="lg" />
-      <Spacer size="lg" />
+    <>
       <PageHeader
         icon={<TokenIcon path={imagePath} />}
         title={`Deposit ${lpTokenName} Tokens and earn ${earnTokenName}`}
@@ -86,17 +84,9 @@ const Farm: React.FC = () => {
         </StyledCardsWrapper>
         <Spacer size="lg" />
       </StyledFarm>
-    </StyledPage>
+    </>
   )
 }
-
-const StyledPage = styled.div`
-  background-color: rgba(0,0,0,0.4);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-`
 
 const StyledFarm = styled.div`
   align-items: center;

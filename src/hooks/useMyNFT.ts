@@ -19,34 +19,23 @@ const useNFTBalance = () => {
     const balance = await contract.methods
       .balanceOfBatch([account, account, account], [1, 2, 3])
       .call()
-    const uri1 = await contract.methods.uri(1).call()
-    const uri2 = await contract.methods.uri(2).call()
-    const uri3 = await contract.methods.uri(3).call()
-    console.log(
-      'useNFTBalance::fetchNFTBalance uri1:',
-      uri1,
-      'uri2:',
-      uri2,
-      'uri3:',
-      uri3,
-    )
     console.log('useNFTBalance::fetchNFTBalance balance:', balance)
     setNFTBalance(balance)
-  }, [account, contract])
+  }, [account, contract.methods])
 
   useEffect(() => {
     if (account && contract) {
       fetchNFTBalance()
     }
-  }, [account, fetchNFTBalance, contract, setNFTBalance])
+  }, [account, contract, fetchNFTBalance])
 
   const nftUri = useCallback(
-    async (tokenId) => {
+    async (tokenId: number) => {
       const uri = await contract.methods.uri(tokenId).call()
       console.log('useNFTBalance::nftUri uri:', uri)
       return uri
     },
-    [contract],
+    [contract.methods],
   )
 
   console.log('useNFTBalance NFTBalance:', NFTBalance)

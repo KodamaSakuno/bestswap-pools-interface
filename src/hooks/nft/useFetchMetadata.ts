@@ -22,11 +22,12 @@ export interface TokenItem {
 
 const useFetchMetadata = (tokenList: Array<TokenItem>) => {
   const { account } = useWallet()
+  const [tokens] = useState<Array<TokenItem>>(tokenList)
   const [metadataList, setMetadataList] = useState<Array<VestMetadata>>([])
   const [, nftUri] = useMyNFT()
   const fetchMetadataList = useCallback(async () => {
     const responseList = await Promise.all(
-      tokenList.map(async (token) => {
+      tokens.map(async (token) => {
         const uri = await nftUri(token.tokenId)
         return axios.get(uri) as Promise<AxiosResponse<VestMetadata>>
       }),
@@ -35,7 +36,7 @@ const useFetchMetadata = (tokenList: Array<TokenItem>) => {
     console.log('MyNFTPage::useEffect:fetchData metadataList:', list)
 
     setMetadataList(list)
-  }, [nftUri, tokenList])
+  }, [nftUri, tokens])
 
   useEffect(() => {
     if (account) {

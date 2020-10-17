@@ -66,7 +66,7 @@ const MyNFTPage: React.FC = () => {
       const initList = findAssetsByType('pending')
       setSelectedList(initList)
     }
-  }, [findAssetsByType, metadataWithStatus.length])
+  }, [findAssetsByType, metadataWithStatus])
 
   return (
     <StyledPageWrapper>

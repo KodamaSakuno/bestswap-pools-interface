@@ -37,43 +37,58 @@ const MyNFTPage: React.FC = () => {
   const { rewardStatus } = useRefReward()
   const { metadataList } = useFetchMetadata(tokenList)
 
-  const metadataWithStatus = metadataList.map((data, i) => {
-    return {
-      ...data,
-      rewardStatus: rewardStatus[i],
-      tokenId: tokenList[i].tokenId,
-      claimId: i
-    }
-  })
+  const findAssetsByType = useCallback(
+    (name: string): Array<MetadataWithStatus> => {
+      const metadataWithStatus = metadataList.map((data, i) => {
+        return {
+          ...data,
+          rewardStatus: rewardStatus[i],
+          tokenId: tokenList[i].tokenId,
+          claimId: i,
+        }
+      })
 
-  const findAssetsByType = useCallback((name: string): Array<MetadataWithStatus> => {
-    const list =
-      name === 'pending'
-        ? metadataWithStatus.filter((item) => item.rewardStatus === true)
-        : metadataWithStatus.filter((item) => item.rewardStatus === false)
-    return list
-  }, [metadataWithStatus])
+      const pendingRewards = metadataWithStatus.filter(
+        (item) => item.rewardStatus === true,
+      )
+      const receivedRewards = metadataWithStatus.filter(
+        (item) => item.rewardStatus === false,
+      )
+      const list = name === 'pending' ? pendingRewards : receivedRewards
+      console.log('MyNFTPage::findAssetsByType metadataWithStatus:', metadataWithStatus, 'list:', list)
+      return list
+    },
+    [metadataList, rewardStatus, tokenList],
+  )
 
-  const [selectedList, setSelectedList] = useState<Array<MetadataWithStatus>>([])
+  const [selectedList, setSelectedList] = useState<Array<MetadataWithStatus>>(
+    [],
+  )
 
-  const handleSwitcherChange = useCallback((name: string) => {
-    const list = findAssetsByType(name)
-    setSelectedList(list)
-  }, [findAssetsByType])
+  const handleSwitcherChange = useCallback(
+    (name: string) => {
+      const list = findAssetsByType(name)
+      setSelectedList(list)
+    },
+    [findAssetsByType],
+  )
 
   useEffect(() => {
-    if (metadataWithStatus.length) {
+    if (account) {
       const initList = findAssetsByType('pending')
       setSelectedList(initList)
     }
-  }, [findAssetsByType, metadataWithStatus])
+  }, [account, findAssetsByType])
 
   return (
     <StyledPageWrapper>
       <Page showBgColor={false}>
         {account ? (
           <StyledContainer>
-            <Switcher switcherList={switcherList} onChange={handleSwitcherChange} />
+            <Switcher
+              switcherList={switcherList}
+              onChange={handleSwitcherChange}
+            />
             <VESTCards selectedList={selectedList} />
           </StyledContainer>
         ) : (

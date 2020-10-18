@@ -33,7 +33,7 @@ const useFetchMetadata = (tokenList: Array<TokenItem>) => {
       }),
     )
     const list = responseList.map((res) => res.data)
-    console.log('MyNFTPage::useEffect:fetchData metadataList:', list)
+    console.log('useFetchMetadata::fetchMetadataList responseList:', responseList, 'list:', list)
 
     setMetadataList(list)
   }, [nftUri, tokens])
@@ -41,6 +41,7 @@ const useFetchMetadata = (tokenList: Array<TokenItem>) => {
   useEffect(() => {
     if (account) {
       fetchMetadataList()
+      console.log('useFetchMetadata::useEffect called!')
     }
   }, [account, fetchMetadataList])
 

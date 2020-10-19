@@ -25,13 +25,13 @@ const Nav: React.FC = () => {
       </StyledLink>
       <StyledLink exact activeClassName="active" to="/nfts">
         NFTs
-      </StyledLink>
+      </StyledLink> */}
       <StyledAbsoluteLink
-        href="https://medium.com/sushiswap/the-sushiswap-project-c4049ea9941e"
+        href="https://peaceful-panini-8ac107.netlify.app/#/swap"
         target="_blank"
       >
-        About
-      </StyledAbsoluteLink> */}
+        Swap
+      </StyledAbsoluteLink>
     </StyledNav>
   )
 }
@@ -48,10 +48,10 @@ const StyledLink = styled(NavLink)`
   padding-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
   &:hover {
-    color: ${(props) => props.theme.color.yellow};
+    color: ${(props) => props.theme.color.white};
   }
   &.active {
-    color: ${(props) => props.theme.color.yellow};
+    color: ${(props) => props.theme.color.white};
     font-weight: bold;
   }
   @media (max-width: 400px) {
@@ -60,23 +60,23 @@ const StyledLink = styled(NavLink)`
   }
 `
 
-// const StyledAbsoluteLink = styled.a`
-//   color: ${(props) => props.theme.color.yellow};
-//   font-weight: normal;
-//   padding-left: ${(props) => props.theme.spacing[3]}px;
-//   padding-right: ${(props) => props.theme.spacing[3]}px;
-//   text-decoration: none;
-//   &:hover {
-//     color: ${(props) => props.theme.color.yellow};
-//   }
-//   &.active {
-//     color: ${(props) => props.theme.color.yellow};
-//     font-weight: bold;
-//   }
-//   @media (max-width: 400px) {
-//     padding-left: ${(props) => props.theme.spacing[2]}px;
-//     padding-right: ${(props) => props.theme.spacing[2]}px;
-//   }
-// `
+const StyledAbsoluteLink = styled.a`
+  color: ${(props) => props.theme.color.yellow};
+  font-weight: normal;
+  padding-left: ${(props) => props.theme.spacing[3]}px;
+  padding-right: ${(props) => props.theme.spacing[3]}px;
+  text-decoration: none;
+  &:hover {
+    color: ${(props) => props.theme.color.white};
+  }
+  &.active {
+    color: ${(props) => props.theme.color.white};
+    font-weight: bold;
+  }
+  @media (max-width: 400px) {
+    padding-left: ${(props) => props.theme.spacing[2]}px;
+    padding-right: ${(props) => props.theme.spacing[2]}px;
+  }
+`
 
 export default Nav

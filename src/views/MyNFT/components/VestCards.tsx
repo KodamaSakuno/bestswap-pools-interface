@@ -20,23 +20,32 @@ const VESTCards: React.FC<VESTCardsProps> = ({ selectedList }) => {
     },
     [[]],
   )
+  if (rows[0].length > 0) {
+    return (
+      <StyledCards>
+        {!!rows[0].length && (
+          rows.map((cardRow, i) => (
+            <StyledRow key={`row-${i}`}>
+              {cardRow.map((card, j) => (
+                <React.Fragment key={`card=${j}`}>
+                  <VESTCard info={card} />
+                  {(j === 0 || j === 1) && <StyledSpacer />}
+                </React.Fragment>
+              ))}
+            </StyledRow>
+          ))
+        )}
+      </StyledCards>
+    )
+  } else {
+    return (
+      <StyledCards>
+        <StyledH1>  no data pending... </StyledH1>
+      </StyledCards>
+    )
+  }
 
-  return (
-    <StyledCards>
-      {!!rows[0].length && (
-        rows.map((cardRow, i) => (
-          <StyledRow key={`row-${i}`}>
-            {cardRow.map((card, j) => (
-              <React.Fragment key={`card=${j}`}>
-                <VESTCard info={card} />
-                {(j === 0 || j === 1) && <StyledSpacer />}
-              </React.Fragment>
-            ))}
-          </StyledRow>
-        ))
-      )}
-    </StyledCards>
-  )
+  
 }
 
 const StyledCards = styled.div`
@@ -61,4 +70,10 @@ const StyledSpacer = styled.div`
   height: 20px;
   width: 20px;
 `
+
+const StyledH1 = styled.h1`
+  color: #fff;
+  text-align: center;
+`
+
 export default VESTCards

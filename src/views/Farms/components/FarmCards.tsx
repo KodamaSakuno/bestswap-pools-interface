@@ -167,7 +167,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
               </StyledDetail>
               <StyledDetail>
                 <StyledDetailSpan>APY</StyledDetailSpan>
-                <StyledDetailSpan>500.38%</StyledDetailSpan>
+                <StyledDetailSpan>---.--% （需要两个币在主网上的价格)</StyledDetailSpan>
               </StyledDetail>
             </StyledDetails>
             <Spacer />

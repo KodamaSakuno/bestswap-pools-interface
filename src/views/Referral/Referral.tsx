@@ -127,8 +127,8 @@ const Referral: React.FC = () => {
           if (refRaw2.toLocaleLowerCase() === account.toLocaleLowerCase()) {
             let subRaw = web3.utils.toHex(item2.raw.topics[1])
             subRaw = rawSha3ToAddress(subRaw)
-            if (myRebateDict[subRaw]) myRebateDict[subRaw] += parseInt(item2.raw.data, 16)
-            else myRebateDict[subRaw] = 0 + parseInt(item2.raw.data, 16)
+            if (myRebateDict[subRaw]) myRebateDict[subRaw] += parseInt(item2.raw.data, 16) * rebatePercent
+            else myRebateDict[subRaw] = 0 + parseInt(item2.raw.data, 16) * rebatePercent
           }
         })
         console.log(myRebateDict)
@@ -136,7 +136,7 @@ const Referral: React.FC = () => {
       })
 
       Ref.methods.score(account).call().then((score: any) => {
-        setRebateNum(new BigNumber(score))
+        setRebateNum(new BigNumber(score * rebatePercent))
       })
     }
     // eslint-disable-next-line
@@ -222,6 +222,30 @@ const Referral: React.FC = () => {
           <button className="rel-copy-btn" onClick={copyToClipboard(link)}>Copy</button>
         </div>
         <InvitedDashboard />
+        <div className="ref-help">
+          <h4>
+            Invitation description:
+          </h4>
+          <p>
+            Step1. Copy your invitation link and send it to friends
+            <br />
+            Step2. You will get rewards if your friends bind addresses to participate in mining
+          </p>
+          <h4>
+            Referral bonus
+          </h4>
+          <p>
+            1. You will receive an additional 7% dividend of all mining rewards obtained through your referral link
+            <br />
+            2. When only your invited friends obtain a certain amount of BEST through mining, you will have the opportunity to get accelerated buff NFT, which can only be pledged in the BUSD pool
+            <br />
+            1) When your invited friends dig out 1000BEST, they can get additional 0.5 times faster buff
+            <br />
+            2) When your invited friends dig out 10,000 BEST, they can get additional 1.5 times faster buff
+            <br />
+            3) When your invited friends dig out 100,000 BEST, they can get the 3x speed buff
+          </p>
+        </div>
       </StyledReferralBox>
     </Page>
   )

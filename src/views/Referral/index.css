@@ -13,3 +13,115 @@
     background-color: #B58804;
     color: white;
 }
+
+.dashboard-title {    
+    margin: 55px 0 0;
+    width: auto;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: #FEC600;
+    line-height: 45px;
+    letter-spacing: 1px;
+}
+
+.dashboard-card {
+    max-width: 720px;
+    height: 248px;
+    margin: 24px auto 0;
+    background: #333333;
+    border-radius: 32px;
+    border: 2px solid #FEC600;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.dashboard-card-invited {
+    margin: 0 0 24px;
+}
+
+.dashboard-card-invited-title {
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FEC600;
+    line-height: 22px;
+}
+
+.dashboard-card-invited-value {
+    text-align: center;
+    margin: 0;
+    font-size: 32px;
+    font-weight: 500;
+    color: #FEC600;
+    line-height: 45px;
+    letter-spacing: 1px;
+}
+
+.dashboard-card-invited-value span {
+    margin: 0;
+    font-size: 14px;
+}
+
+.dashboard-card-col {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-card-col-label {
+    margin: 0 23px 0;
+}
+
+.dashboard-card-col-label-value {
+    text-align: center;
+    margin: 0 0 5px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 33px;
+}
+
+.dashboard-card-col-label-value span {
+    font-size: 14px;
+}
+
+.dashboard-card-col-label-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #B2B2B2;
+    line-height: 20px;
+}
+
+.address-list {
+    max-width: 720px;
+    margin: 24px auto 0;
+}
+
+.address-list-title {
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #FEC600;
+    line-height: 45px;
+    letter-spacing: 1px;
+}
+
+.address-list-item {
+    color: #FEC600;
+}
+.address-list-item:visited {
+    color: #FEC600;
+}
+
+.address-list-entry {
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FEC600;
+    line-height: 20px;
+    letter-spacing: 1px;
+}

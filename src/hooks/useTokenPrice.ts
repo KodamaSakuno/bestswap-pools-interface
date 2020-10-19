@@ -7,11 +7,16 @@ import { address } from "../constants/swap";
 import { WBNB } from "../constants/addresses";
 // import { BigNumber } from "../sushi";
 
-const { BigNumber } = utils
+// const { BigNumber } = utils
 
-export function useTokenPrice(tokenAddress: string) {
+/**
+ * useTokenPrice 获取1个单位的代币在 Swap 合约中的价格（以BNB计价）
+ * @param tokenAddress Address of ERC20/BEP20 Token
+ * @param decimals Token decimals, optional, default is 18. Needs to fill if decimals is not 18
+ */
+export function useTokenPrice(tokenAddress: string, decimals: number|string = 18) {
     const { account, ethereum } = useWallet()
-    const [ priceInBNB, updatePriceInBNB ] = useState(new BigNumber(0))
+    const [ priceInBNB, updatePriceInBNB ] = useState("0")
     // 97 stands for bsc testnet
     const networkId = 97
     const contract = useMemo(() => {
@@ -19,18 +24,21 @@ export function useTokenPrice(tokenAddress: string) {
     }, [ethereum])
 
     const fetchPrice = useCallback(async () => {
-        const [, outputWETH] = await contract.methods.getAmountsOut(utils.parseUnits("1", 18), [
-            tokenAddress, // the token address
-            WBNB[networkId] // WETH
-        ]).call();
-        updatePriceInBNB(outputWETH)
-      }, [contract, tokenAddress])
+        const [, outputWBNB] = await contract.methods.getAmountsOut(
+            utils.parseUnits("1", decimals), 
+            [
+                tokenAddress, // the token address
+                WBNB[networkId] // WBNB
+            ]).call();
+        updatePriceInBNB(outputWBNB)
+    }, [contract, tokenAddress, decimals])
 
-      useEffect(() => {
+
+    useEffect(() => {
         if (account && contract) {
             fetchPrice()
         }
-      }, [contract, account, fetchPrice])
+    }, [contract, account, fetchPrice])
 
-      return { priceInBNB, fetchPrice }
+    return { priceInBNB, fetchPrice }
 }

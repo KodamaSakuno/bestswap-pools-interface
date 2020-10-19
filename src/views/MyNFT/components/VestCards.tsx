@@ -40,7 +40,7 @@ const VESTCards: React.FC<VESTCardsProps> = ({ selectedList }) => {
   } else {
     return (
       <StyledCards>
-        <StyledH1>  no data pending... </StyledH1>
+        <StyledH1>No data pending...</StyledH1>
       </StyledCards>
     )
   }
@@ -74,6 +74,8 @@ const StyledSpacer = styled.div`
 const StyledH1 = styled.h1`
   color: #fff;
   text-align: center;
+  font-size: 32px;
+  font-weight: normal;
 `
 
 export default VESTCards

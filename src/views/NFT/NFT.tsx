@@ -17,8 +17,8 @@ const NFT: React.FC = () => {
   const { address: accAddress } = useAccelerator(nftSymbol)
   const [holdings, fetchHoldings] = useHoldings(address)
   const [staked, quality, fetchStaked] = useStakedNFT(symbol)
-  const [ myNFT, nftUri ]= useMyNFT()
-  const { rewardStatus, onClaimNFT } = useRefReward()
+  const [ myNFT ]= useMyNFT()
+  const { rewardStatus } = useRefReward()
 
   const fetch = () => {
     fetchHoldings()

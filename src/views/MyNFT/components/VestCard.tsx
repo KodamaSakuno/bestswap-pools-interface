@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { lighten } from 'polished'
 import LevelImage from '../../../assets/img/vestnft/vestnft-card-level.png'
 import { VestMetadata } from './types'
 import capitalize from '../../../utils/capitalize'
 import useRefReward from '../../../hooks/useRefReward'
+import useModal from '../../../hooks/useModal'
+import TransactionModal from '../../../components/TransactionModal'
+import { getBscScanLink } from '../../../utils/getBscScanLink'
 
 export interface VESTCardProps {
   info: VestMetadata & { rewardStatus?: boolean, claimId?: number }
@@ -40,7 +43,24 @@ const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
     }
   }
 
+  const [txHashLink, setTxHashLink] = useState('')
+
+  const handleModalConfirm = () => {
+    console.log('VestCard::handleModalConfirm called!')
+  }
+  const [onPresentTransactionModal] = useModal(
+    <TransactionModal type='success' txLink={txHashLink} onConfirm={handleModalConfirm} />
+  )
+
   const { onClaimNFT } = useRefReward()
+  const handleClaimNFT = useCallback(async (id: number) => {
+    const txHash = await onClaimNFT(id)
+    if (txHash) {
+      const link = getBscScanLink(97, txHash, 'transaction')
+      setTxHashLink(link)
+      onPresentTransactionModal()
+    }
+  }, [onClaimNFT, onPresentTransactionModal])
 
   useEffect(() => {
     loadNFTImage(image)
@@ -58,7 +78,7 @@ const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
       {
         (type === 'referral' && rewardStatus) && (
           <StyledButton
-            onClick={() => { onClaimNFT(claimId) }}
+            onClick={() => { handleClaimNFT(claimId) }}
           >
             Receive
           </StyledButton>

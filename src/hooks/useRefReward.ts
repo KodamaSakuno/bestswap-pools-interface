@@ -27,16 +27,20 @@ const useRefReward = () => {
     }, [account, fetchRewardStatus, contract, setRewardStatus])
 
     const handleClaimNFT = useCallback(
-      async (id) => {
-        const txHash = await contract.methods
-        .claim(id)
-        .send({ from: account })
-        .on('transactionHash', (tx: any) => {
-          console.log(tx)
-          return tx.transactionHash
-        })
-        console.log(txHash)
-        return ''
+      async (id: number) => {
+        try {
+          const txHash: string = await contract.methods
+          .claim(id)
+          .send({ from: account })
+          .on('transactionHash', (tx: { transactionHash: string }) => {
+            console.log('useRefReward::handleClaimNFT tx:', tx)
+            return tx.transactionHash
+          })
+          console.log('useRefReward::handleClaimNFT txHash:', txHash)
+          return txHash
+        } catch (error) {
+          console.error('useRefReward::handleClaimNFT error:', error)
+        }
       }, [account, contract.methods])
 
     return { rewardStatus, onClaimNFT: handleClaimNFT }

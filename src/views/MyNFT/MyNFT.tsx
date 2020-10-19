@@ -83,7 +83,7 @@ const MyNFTPage: React.FC = () => {
       const list = findAssetsByType(name, metadataList, rewardStatus, tokenList, NFTBalance)
       setSelectedList(list)
     },
-    [metadataList, rewardStatus],
+    [NFTBalance, metadataList, rewardStatus],
   )
 
   useEffect(() => {
@@ -97,7 +97,7 @@ const MyNFTPage: React.FC = () => {
       )
       setSelectedList(initList)
     }
-  }, [account, metadataList, rewardStatus])
+  }, [NFTBalance, account, metadataList, rewardStatus])
 
   return (
     <StyledPageWrapper>

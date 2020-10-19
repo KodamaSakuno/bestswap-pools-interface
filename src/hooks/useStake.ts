@@ -54,8 +54,6 @@ const useStake = (pid: number) => {
   )
 
   return { onStake: handleStake, onStakeWithRef: handleStakeWithRef }
-
-  return { onStake: handleStake }
 }
 
 export default useStake

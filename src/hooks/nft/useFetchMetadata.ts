@@ -29,6 +29,7 @@ const useFetchMetadata = (tokenList: Array<TokenItem>) => {
     const responseList = await Promise.all(
       tokens.map(async (token) => {
         const uri = await nftUri(token.tokenId)
+        // const uri = `https://metadataapi.daojam.io/vest/${token.tokenId}`
         return axios.get(uri) as Promise<AxiosResponse<VestMetadata>>
       }),
     )

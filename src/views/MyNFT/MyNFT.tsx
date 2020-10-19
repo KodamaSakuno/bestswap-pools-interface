@@ -19,47 +19,55 @@ interface MetadataWithStatus extends VestMetadata {
   claimId: number
 }
 
+const switcherList = ['pending', 'received']
+const tokenList: Array<TokenItem> = [
+  {
+    tokenId: 1,
+  },
+  {
+    tokenId: 2,
+  },
+  {
+    tokenId: 3,
+  },
+]
+
+const findAssetsByType = (
+  name: string,
+  metadataList: Array<VestMetadata>,
+  rewardStatus: Array<boolean>,
+  tokenList: Array<TokenItem>,
+): Array<MetadataWithStatus> => {
+  const metadataWithStatus = metadataList.map((data, i) => {
+    return {
+      ...data,
+      rewardStatus: rewardStatus[i],
+      tokenId: tokenList[i].tokenId,
+      claimId: i,
+    }
+  })
+
+  const pendingRewards = metadataWithStatus.filter(
+    (item) => item.rewardStatus === true,
+  )
+  const receivedRewards = metadataWithStatus.filter(
+    (item) => item.rewardStatus === false,
+  )
+  const list = name === 'pending' ? pendingRewards : receivedRewards
+  console.log(
+    'MyNFTPage::findAssetsByType metadataWithStatus:',
+    metadataWithStatus,
+    'list:',
+    list,
+  )
+  return list
+}
+
 const MyNFTPage: React.FC = () => {
-  const switcherList = ['pending', 'received']
-  const tokenList: Array<TokenItem> = [
-    {
-      tokenId: 1,
-    },
-    {
-      tokenId: 2,
-    },
-    {
-      tokenId: 3,
-    },
-  ]
   const { account } = useWallet()
   const [onPresentWalletProviderModal] = useModal(<WalletProviderModal />)
   const { rewardStatus } = useRefReward()
   const { metadataList } = useFetchMetadata(tokenList)
-
-  const findAssetsByType = useCallback(
-    (name: string): Array<MetadataWithStatus> => {
-      const metadataWithStatus = metadataList.map((data, i) => {
-        return {
-          ...data,
-          rewardStatus: rewardStatus[i],
-          tokenId: tokenList[i].tokenId,
-          claimId: i,
-        }
-      })
-
-      const pendingRewards = metadataWithStatus.filter(
-        (item) => item.rewardStatus === true,
-      )
-      const receivedRewards = metadataWithStatus.filter(
-        (item) => item.rewardStatus === false,
-      )
-      const list = name === 'pending' ? pendingRewards : receivedRewards
-      console.log('MyNFTPage::findAssetsByType metadataWithStatus:', metadataWithStatus, 'list:', list)
-      return list
-    },
-    [metadataList, rewardStatus, tokenList],
-  )
 
   const [selectedList, setSelectedList] = useState<Array<MetadataWithStatus>>(
     [],
@@ -67,18 +75,23 @@ const MyNFTPage: React.FC = () => {
 
   const handleSwitcherChange = useCallback(
     (name: string) => {
-      const list = findAssetsByType(name)
+      const list = findAssetsByType(name, metadataList, rewardStatus, tokenList)
       setSelectedList(list)
     },
-    [findAssetsByType],
+    [metadataList, rewardStatus],
   )
 
   useEffect(() => {
     if (account) {
-      const initList = findAssetsByType('pending')
+      const initList = findAssetsByType(
+        'pending',
+        metadataList,
+        rewardStatus,
+        tokenList,
+      )
       setSelectedList(initList)
     }
-  }, [account, findAssetsByType])
+  }, [account, metadataList, rewardStatus])
 
   return (
     <StyledPageWrapper>

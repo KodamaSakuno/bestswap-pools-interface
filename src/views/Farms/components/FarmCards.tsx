@@ -18,6 +18,9 @@ import useTotalSupply from '../../../hooks/useTotalSupply'
 import { getEarned, getMasterChefContract } from '../../../sushi/utils'
 import { bnToDec } from '../../../utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
+import useDecimals from '../../../hooks/useDecimals'
+import { useTokenPriceInBNB } from '../../../hooks/useTokenPrice'
+import { usePoolApy } from '../../../hooks/useFarmApy'
 
 interface FarmWithStakedValue extends Farm, StakedValue {
   apy: BigNumber
@@ -98,7 +101,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   const [imagePath, setImagePath ] = useState('')
 
   const { account } = useWallet()
-  const { stakingTokenAddress, pid, name: symbol } = farm
+  const { stakingTokenAddress, poolAddress, earnTokenAddress, pid, name: symbol } = farm
+  const decimalsOfStaking = useDecimals(stakingTokenAddress)
+  const decimalsOfEarn = useDecimals(earnTokenAddress)
+  const { priceInBNB: tokenPriceOfStaking } = useTokenPriceInBNB(stakingTokenAddress, decimalsOfStaking)
+  const { priceInBNB: tokenPriceOfEarn } = useTokenPriceInBNB(earnTokenAddress, decimalsOfEarn)
+
+  const { apy } = usePoolApy(poolAddress, tokenPriceOfEarn, tokenPriceOfStaking, decimalsOfEarn, decimalsOfStaking)
   const sushi = useSushi()
 
   const totalSupply = useTotalSupply(pid)
@@ -167,7 +176,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
               </StyledDetail>
               <StyledDetail>
                 <StyledDetailSpan>APY</StyledDetailSpan>
-                <StyledDetailSpan>---.--% （需要两个币在主网上的价格)</StyledDetailSpan>
+                <StyledDetailSpan>{apy}%</StyledDetailSpan>
               </StyledDetail>
             </StyledDetails>
             <Spacer />

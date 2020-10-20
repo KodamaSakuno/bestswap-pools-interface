@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { provider } from 'web3-core'
 import { useWallet } from "use-wallet";
-import { BigNumber, formatUnits } from "ethers/utils";
+import { formatUnits } from "ethers/utils";
 import { getContract } from "../utils/pool";
 
 export function usePoolApy(poolAddress: string, everyRewardTokenInBNB: string, everyStakingTokenInBNB: string, 

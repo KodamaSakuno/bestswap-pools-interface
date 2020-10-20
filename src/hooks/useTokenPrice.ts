@@ -32,21 +32,25 @@ export function useTokenPriceInBNB(tokenAddress: string, decimals: number|string
             updatePriceInBNB(oneUnitOfToken.toString())
             return
         }
-        const [, outputWBNB] = await contract.methods.getAmountsOut(
-            oneUnitOfToken,
-            [
-                tokenAddress, // the token address
-                WBNB[networkId] // WBNB
-            ]).call();
-        updatePriceInBNB(outputWBNB)
+        try {
+            const [, outputWBNB] = await contract.methods.getAmountsOut(
+                oneUnitOfToken,
+                [
+                    tokenAddress, // the token address
+                    WBNB[networkId] // WBNB
+                ]).call();
+            updatePriceInBNB(outputWBNB)
+        } catch (error) {
+            console.error('unable to fetch price for: ' + tokenAddress)
+        }
     }, [contract, tokenAddress, oneUnitOfToken])
 
 
     useEffect(() => {
-        if (account && contract) {
+        if (account && contract && decimals !== '0') {
             fetchPrice()
         }
-    }, [contract, account, fetchPrice])
+    }, [contract, account, fetchPrice, decimals])
 
     return { priceInBNB, fetchPrice }
 }

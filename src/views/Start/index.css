@@ -1,0 +1,72 @@
+.start-page {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    background: white;
+}
+
+.start-chapter {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s;
+    min-width: 0;
+}
+.start-chapter:hover {
+    flex: 1.5;
+    min-width: 280px;
+}
+
+.start-chapter-subscript {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -40px;
+    right: -35px;
+}
+.start-chapter-subscript img {
+    height: 100%;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.start-chapter-cover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+}
+.start-chapter-disable {
+    cursor: not-allowed;
+}
+.start-chapter-cover:hover {
+    transform: translateY(-4px);
+}
+
+.start-chapter-cover-title {   
+    white-space: nowrap;
+    font-size: 36px;
+    font-weight: 400;
+    color: #FEFEFE;
+    line-height: 10px;
+    margin: 0 0 44px;
+}
+
+.start-chapter-cover-role {
+    height: 389px;
+}
+
+.start-chapter-cover-index {
+    height: 108px;
+    width: 28px;
+    margin: 43px 0 0;
+}

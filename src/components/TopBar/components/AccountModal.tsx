@@ -2,8 +2,8 @@ import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import useTokenBalance from '../../../hooks/useTokenBalance'
-import useSushi from '../../../hooks/useSushi'
-import { getSushiAddress } from '../../../sushi/utils'
+// import useSushi from '../../../hooks/useSushi'
+// import { getSushiAddress } from '../../../sushi/utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 import Button from '../../Button'
 import CardIcon from '../../CardIcon'
@@ -14,6 +14,9 @@ import ModalContent from '../../ModalContent'
 import ModalTitle from '../../ModalTitle'
 import Spacer from '../../Spacer'
 import Value from '../../Value'
+import useExplorer from '../../../hooks/useExplorer'
+import bestImage from '../../../assets/img/best-icon.png'
+import useBest from '../../../hooks/useBest'
 
 const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const { account, reset } = useWallet()
@@ -23,8 +26,9 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
     reset()
   }, [onDismiss, reset])
 
-  const sushi = useSushi()
-  const sushiBalance = useTokenBalance(getSushiAddress(sushi))
+  // const sushi = useSushi()
+  const best = useBest()
+  const sushiBalance = useTokenBalance(best.address)
 
   return (
     <Modal>
@@ -35,19 +39,20 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
         <div style={{ display: 'flex' }}>
           <StyledBalanceWrapper>
             <CardIcon>
-              <span role="img" aria-label="Sushi">🍣</span>
+              {/* <span role="img" aria-label="Sushi">🍣</span> */}
+              <StyledImage src={bestImage} alt='best-icon' />
             </CardIcon>
             <StyledBalance>
               <Value value={getBalanceNumber(sushiBalance)} />
-              <Label text="SUSHI Balance" />
+              <Label text="BEST Balance" />
             </StyledBalance>
           </StyledBalanceWrapper>
         </div>
 
         <Spacer />
         <Button
-          href={`https://etherscan.io/address/${account}`}
-          text="View on Etherscan"
+          href={`${useExplorer().link}${account}`}
+          text="View on BscScan"
           variant="secondary"
         />
         <Spacer />
@@ -63,6 +68,13 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
     </Modal>
   )
 }
+
+const StyledImage = styled.img`
+  width: 45px;
+  height: 45px;
+  margin-top: 4px;
+  display: inline-block;
+`
 
 const StyledBalance = styled.div`
   align-items: center;

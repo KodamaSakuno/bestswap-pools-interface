@@ -17,7 +17,7 @@ const useTotalSupply = (pid: number) => {
     const fetchTotalSupply = useCallback(async () => {
         const totalSupply = await contract.methods.totalSupply().call()
         setTotalSupply(new BigNumber(totalSupply))
-    }, [account, contract])
+    }, [contract])
 
     useEffect(() => {
       if (account && contract) {

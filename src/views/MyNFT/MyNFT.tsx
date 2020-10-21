@@ -11,12 +11,14 @@ import useFetchMetadata, {
   TokenItem,
   VestMetadata,
 } from '../../hooks/nft/useFetchMetadata'
+import useMyNFT from '../../hooks/useMyNFT'
 import VESTCards from './components/VestCards'
 
 interface MetadataWithStatus extends VestMetadata {
   rewardStatus: boolean
   tokenId: number
   claimId: number
+  balance: number
 }
 
 const switcherList = ['pending', 'received']
@@ -37,6 +39,7 @@ const findAssetsByType = (
   metadataList: Array<VestMetadata>,
   rewardStatus: Array<boolean>,
   tokenList: Array<TokenItem>,
+  balance: Array<any>,
 ): Array<MetadataWithStatus> => {
   const metadataWithStatus = metadataList.map((data, i) => {
     return {
@@ -44,6 +47,7 @@ const findAssetsByType = (
       rewardStatus: rewardStatus[i],
       tokenId: tokenList[i].tokenId,
       claimId: i,
+      balance: Number(balance[i])
     }
   })
 
@@ -51,7 +55,7 @@ const findAssetsByType = (
     (item) => item.rewardStatus === true,
   )
   const receivedRewards = metadataWithStatus.filter(
-    (item) => item.rewardStatus === false,
+    (item) => item.balance > 0,
   )
   const list = name === 'pending' ? pendingRewards : receivedRewards
   console.log(
@@ -68,6 +72,7 @@ const MyNFTPage: React.FC = () => {
   const [onPresentWalletProviderModal] = useModal(<WalletProviderModal />)
   const { rewardStatus } = useRefReward()
   const { metadataList } = useFetchMetadata(tokenList)
+  const [NFTBalance] = useMyNFT()
 
   const [selectedList, setSelectedList] = useState<Array<MetadataWithStatus>>(
     [],
@@ -75,10 +80,10 @@ const MyNFTPage: React.FC = () => {
 
   const handleSwitcherChange = useCallback(
     (name: string) => {
-      const list = findAssetsByType(name, metadataList, rewardStatus, tokenList)
+      const list = findAssetsByType(name, metadataList, rewardStatus, tokenList, NFTBalance)
       setSelectedList(list)
     },
-    [metadataList, rewardStatus],
+    [NFTBalance, metadataList, rewardStatus],
   )
 
   useEffect(() => {
@@ -88,10 +93,11 @@ const MyNFTPage: React.FC = () => {
         metadataList,
         rewardStatus,
         tokenList,
+        NFTBalance
       )
       setSelectedList(initList)
     }
-  }, [account, metadataList, rewardStatus])
+  }, [NFTBalance, account, metadataList, rewardStatus])
 
   return (
     <StyledPageWrapper>

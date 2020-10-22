@@ -40,5 +40,5 @@ export function getCookie (cname: string): string {
    * @param {String} cname   - Cookie's name Cookie 的名字
    */
   export function clearCookie (cname: string): void {
-    document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:01 GMT`
+    document.cookie = `${cname}`+'=; Max-Age=0;'
   }

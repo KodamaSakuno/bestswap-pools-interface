@@ -24,7 +24,7 @@ const useFetchMetadata = (tokenList: Array<TokenItem>) => {
   const { account } = useWallet()
   const [tokens] = useState<Array<TokenItem>>(tokenList)
   const [metadataList, setMetadataList] = useState<Array<VestMetadata>>([])
-  const [, nftUri] = useMyNFT()
+  const {nftUri} = useMyNFT()
   const fetchMetadataList = useCallback(async () => {
     const responseList = await Promise.all(
       tokens.map(async (token) => {

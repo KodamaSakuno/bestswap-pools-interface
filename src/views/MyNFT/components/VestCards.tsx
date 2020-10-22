@@ -4,10 +4,11 @@ import VESTCard from './VestCard'
 import { VestMetadata } from './types'
 
 export interface VESTCardsProps {
-  selectedList: Array<VestMetadata>
+  selectedList: Array<VestMetadata>,
+  tab: string
 }
 
-const VESTCards: React.FC<VESTCardsProps> = ({ selectedList }) => {
+const VESTCards: React.FC<VESTCardsProps> = ({ selectedList, tab }) => {
   const rows = selectedList.reduce<Array<Array<VestMetadata>>>(
     (cardRows, card) => {
       const newCardRows = [...cardRows]
@@ -28,7 +29,7 @@ const VESTCards: React.FC<VESTCardsProps> = ({ selectedList }) => {
             <StyledRow key={`row-${i}`}>
               {cardRow.map((card, j) => (
                 <React.Fragment key={`card=${j}`}>
-                  <VESTCard info={card} />
+                  <VESTCard info={card} tab={tab} />
                   {(j === 0 || j === 1) && <StyledSpacer />}
                 </React.Fragment>
               ))}

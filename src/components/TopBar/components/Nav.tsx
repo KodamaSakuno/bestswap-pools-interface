@@ -6,7 +6,7 @@ const Nav: React.FC = () => {
   return (
     <StyledNav>
       <StyledLink exact activeClassName="active" to="/home">
-        Home
+        Harvest
       </StyledLink>
       <StyledLink exact activeClassName="active" to="/farms">
         Menu
@@ -30,7 +30,7 @@ const Nav: React.FC = () => {
         href="https://peaceful-panini-8ac107.netlify.app/#/swap"
         target="_blank"
       >
-        Swap
+        Back Home
       </StyledAbsoluteLink>
     </StyledNav>
   )

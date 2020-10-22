@@ -6,7 +6,7 @@ import BestswapLogo from '../../assets/img/bestswap-logo.png'
 const Logo: React.FC = () => {
   return (
     <StyledLogo to="/">
-      <img src={BestswapLogo} height="40" style={{ marginTop: -4 }} alt="logo" />
+      <img src={BestswapLogo} height="40" style={{ marginTop: -12 }} alt="logo" />
     </StyledLogo>
   )
 }

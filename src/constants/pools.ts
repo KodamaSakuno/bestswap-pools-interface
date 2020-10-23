@@ -1,16 +1,16 @@
 export const Pools = [
     {
         poolAddresses: {
-            97: '0xcfe75422bB6edD4BD52c35e59d9c6ee6E4de084a',
+            56: '0x2D3173479c0f1B02D0f739007C7CBFb8C8D1236f',
         },
         stakingTokenAddresses: {
-            97: '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
+            56: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
         },
         acceleratorAddresses: {
-            97: '0xcCabAF0CBCDD3bcfA35bCE08F0D3012aFF1C1F15',
+            56: '0x53aDF96c24b1D6C1577e21B8E9b32912998C7493',
         },
         nftTokenAddress: {
-            97: '0x1850fe94de37C2cA68A1b15AE97948C12238BA0b'
+            56: '0x1850fe94de37C2cA68A1b15AE97948C12238BA0b'
         },
         name: 'BUSD',
         symbol: 'BUSD',

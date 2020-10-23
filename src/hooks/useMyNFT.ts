@@ -8,12 +8,12 @@ import { ACC } from '../constants/acc'
 const useNFTBalance = () => {
   const [NFTBalance, setNFTBalance] = useState([0, 0, 0])
   const [approveState, setApproveState] = useState(false)
-  const { chainId, account, ethereum } = useWallet()
+  const { account, ethereum } = useWallet()
 
   const contract = useMemo(() => {
     return getContract(
       ethereum as provider,
-      '0x1850fe94de37C2cA68A1b15AE97948C12238BA0b',
+      '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
     )
   }, [ethereum])
 

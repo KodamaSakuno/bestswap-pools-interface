@@ -67,12 +67,14 @@ const VESTCard: React.FC<VESTCardProps> = ({ info, tab }) => {
     }
   }, [onClaimNFT, onPresentTransactionModal])
 
+  const availableNFT = [1, 2, 3]
+
   useEffect(() => {
     loadNFTImage(image)
   }, [image])
 
   let btmBtn
-  if (tab === 'pending') {
+  if (tab === 'pending' && availableNFT.indexOf(tokenId) !== -1) {
     btmBtn = (type === 'referral' && rewardStatus) && (
       <StyledButton
         onClick={() => { handleClaimNFT(claimId) }}
@@ -80,7 +82,7 @@ const VESTCard: React.FC<VESTCardProps> = ({ info, tab }) => {
         Receive
       </StyledButton>
     )
-  } else if (tab === 'received') {
+  } else if (tab === 'received' && availableNFT.indexOf(tokenId) !== -1) {
     if (approveState) {
       btmBtn = (
         <StyledButton
@@ -98,7 +100,7 @@ const VESTCard: React.FC<VESTCardProps> = ({ info, tab }) => {
         </StyledButton>
       )
     }
-  } else if (tab === 'staked') {
+  } else if (tab === 'staked' && availableNFT.indexOf(tokenId) !== -1) {
     btmBtn = (
       <StyledButton
         onClick={() => { onUnstake() }}

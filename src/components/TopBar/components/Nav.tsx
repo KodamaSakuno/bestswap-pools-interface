@@ -27,7 +27,7 @@ const Nav: React.FC = () => {
         NFTs
       </StyledLink> */}
       <StyledAbsoluteLink
-        href="https://peaceful-panini-8ac107.netlify.app/#/swap"
+        href="/swap"
         target="_blank"
       >
         Back Home

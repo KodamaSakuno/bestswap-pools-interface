@@ -13,7 +13,6 @@ import useFetchMetadata, {
   VestMetadata,
 } from '../../hooks/nft/useFetchMetadata'
 import useMyNFT from '../../hooks/useMyNFT'
-import useAcc from '../../hooks/useAcc'
 import VESTCards from './components/VestCards'
 import AcceleratorABI from '../../constants/abi/StakingRewardAccelerator.json'
 import { ACC } from '../../constants/acc'
@@ -72,7 +71,7 @@ const findAssetsByType = (
     (item) => item.balance > 0,
   )
   const stakedRewards = metadataWithStatus.filter(
-    (item) => item.staked == true,
+    (item) => item.staked === true,
   )
 
   let list: Array<MetadataWithStatus> = []
@@ -106,7 +105,6 @@ const MyNFTPage: React.FC = () => {
   const { rewardStatus } = useRefReward()
   const { metadataList } = useFetchMetadata(tokenList)
   const {NFTBalance} = useMyNFT()
-  const {staked} = useAcc()
 
   const [selectedList, setSelectedList] = useState<Array<MetadataWithStatus>>(
     [],
@@ -122,7 +120,7 @@ const MyNFTPage: React.FC = () => {
       const list = findAssetsByType(name, metadataList, rewardStatus, tokenList, NFTBalance, NFTId)
       setSelectedList(list)
     },
-    [NFTBalance, metadataList, rewardStatus],
+    [account, NFTBalance, metadataList, rewardStatus],
   )
 
   useEffect(() => {

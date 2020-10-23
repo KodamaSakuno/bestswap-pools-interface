@@ -39,7 +39,7 @@ const useNFTBalance = () => {
       fetchNFTBalance()
       fetchApproveState()
     }
-  }, [account, contract, fetchNFTBalance])
+  }, [account, contract, fetchNFTBalance, fetchApproveState])
 
   const nftUri = useCallback(
     async (tokenId: number) => {
@@ -51,7 +51,7 @@ const useNFTBalance = () => {
   )
 
   const setApprovalForAll = useCallback( async () => {
-      const call = await contract.methods.setApprovalForAll(ACC, true).send({ from: account })
+      await contract.methods.setApprovalForAll(ACC, true).send({ from: account })
 
       /* const txHash = await call.on('transactionHash', (tx: any) => {
         console.log('NFT::useClaim::setApprovalForAll tx:', tx)

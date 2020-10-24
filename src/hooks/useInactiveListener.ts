@@ -8,7 +8,6 @@ export function useInactiveListener(suppress = false) {
         if (suppress) {
             return () => { };
         }
-        console.log('account', account)
         const { ethereum } = window as any;
         if (ethereum && ethereum.on && !error) {
             const handleChainChanged = (chainId: any) => {
@@ -33,6 +32,7 @@ export function useInactiveListener(suppress = false) {
             ethereum.on("networkChanged", handleNetworkChanged);
 
             const timer = setInterval(() => {
+                console.log('account', account)
                 if (!account) {
                     connect('injected')
                 }

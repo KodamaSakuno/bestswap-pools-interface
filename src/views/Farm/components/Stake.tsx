@@ -27,8 +27,8 @@ import HarvestIcon from '../../../assets/img/harvest-icon.png'
 import { getCookie } from '../../../utils/cookie'
 
 interface StakeProps {
-  lpContract: Contract
-  pid: number
+  lpContract: Contract | any,
+  pid: number,
   tokenName: string,
   isWBNB: boolean,
 }
@@ -75,9 +75,9 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName, isWBNB }) => 
     const c = getCookie('invite_id')
     if (c.toLocaleLowerCase() === account.toLocaleLowerCase()) {
       let cArray = document.cookie.split("; ");
-      for (let i in cArray) 
-        document.cookie =/^[^=]+/.exec(cArray[i])[0]+"=; Max-Age=0";
-      }
+      for (let i in cArray)
+        document.cookie = /^[^=]+/.exec(cArray[i])[0] + "=; Max-Age=0";
+    }
     if (c && c.toLocaleLowerCase() !== account.toLocaleLowerCase()) {
       return (
         <IconButton onClick={onPresentDepositWithRef}>
@@ -114,7 +114,7 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName, isWBNB }) => 
         <StyledCardContentInner>
           <StyledCardHeader>
             <CardIcon>
-              <StyledImageIcon src={HarvestIcon} alt="icon"/>
+              <StyledImageIcon src={HarvestIcon} alt="icon" />
             </CardIcon>
             <Value value={getBalanceNumber(stakedBalance)} />
             <Label text={`${tokenName} Tokens Staked`} />
@@ -127,16 +127,16 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName, isWBNB }) => 
                 text={`Approve ${tokenName}`}
               />
             ) : (
-              <>
-                <Button
-                  disabled={stakedBalance.eq(new BigNumber(0))}
-                  text="Unstake"
-                  onClick={onPresentWithdraw}
-                />
-                <StyledActionSpacer />
-                <GetStakeType />
-              </>
-            )}
+                <>
+                  <Button
+                    disabled={stakedBalance.eq(new BigNumber(0))}
+                    text="Unstake"
+                    onClick={onPresentWithdraw}
+                  />
+                  <StyledActionSpacer />
+                  <GetStakeType />
+                </>
+              )}
           </StyledCardActions>
         </StyledCardContentInner>
       </CardContent>

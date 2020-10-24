@@ -46,8 +46,8 @@ const Footer: React.FC = () => (
         <StyledFooterItemContennt>
           <StyledFooterItemContenntGrid>
             {
-              partnersList.map(i => (
-                <StyledFooterItemPartner>
+              partnersList.map((i, idx) => (
+                <StyledFooterItemPartner key={idx}>
                   <img src={i} alt="partners"/>
                 </StyledFooterItemPartner>
               ))

@@ -214,7 +214,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -257,7 +257,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -300,7 +300,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -343,7 +343,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -386,7 +386,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -429,7 +429,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -472,7 +472,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -515,7 +515,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -558,7 +558,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -601,7 +601,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -644,7 +644,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -687,7 +687,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -730,7 +730,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -773,7 +773,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -816,7 +816,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -859,7 +859,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -902,7 +902,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -945,7 +945,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -989,7 +989,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -1032,7 +1032,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -1075,7 +1075,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -1119,7 +1119,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -1162,7 +1162,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -1205,7 +1205,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -1248,7 +1248,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -1291,7 +1291,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -1334,7 +1334,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -1344,3 +1344,5 @@ export const VestNFTList: Array<NftAssets> = [
     ],
   },
 ]
+
+export const NFTLength: number = 18

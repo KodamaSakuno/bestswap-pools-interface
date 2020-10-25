@@ -31,7 +31,7 @@ export const Pools = [
         symbol: 'BNB/BUSD_LP',
         tokenSymbol: 'BNB/BUSD_LP',
         isWBNB: false,
-        icon: 'bnb-busd',
+        icon: 'busd-bnb',
         nftSymbol: 'VEST',
         magnification: 1,
     },

@@ -98,7 +98,7 @@ const Referral: React.FC = () => {
     }
     let text = ''
     if (account === null) text = 'Unlock Your Wallet First'
-    else text = window.location.origin + '/referral?l=' + encryptText(account)
+    else text = window.location.origin + window.location.pathname + '/referral?l=' + encryptText(account)
     setLink(text)
     if (account) {
       refRewardContract.methods.claimed(account).call().then((res: any) => {

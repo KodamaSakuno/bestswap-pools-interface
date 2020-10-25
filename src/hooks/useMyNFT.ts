@@ -4,9 +4,11 @@ import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
 import { getContract } from '../utils/vest'
 import { ACC } from '../constants/acc'
+import { NFTLength } from '../constants/vestNFTs'
 
 const useNFTBalance = () => {
-  const [NFTBalance, setNFTBalance] = useState([0, 0, 0])
+  const initBalance = new Array(NFTLength).fill(0); // [0, 0, 0,...,0]
+  const [NFTBalance, setNFTBalance] = useState(initBalance)
   const [approveState, setApproveState] = useState(false)
   const { account, ethereum } = useWallet()
 
@@ -18,8 +20,10 @@ const useNFTBalance = () => {
   }, [ethereum])
 
   const fetchNFTBalance = useCallback(async () => {
+    const initAccount = new Array(NFTLength).fill(account); // [account, account, ... account]
+    const initTokenId = Array.from({length:NFTLength},(item, index)=> index+1) // [1,2,3,...18]
     const balance = await contract.methods
-      .balanceOfBatch([account, account, account], [1, 2, 3])
+      .balanceOfBatch(initAccount, initTokenId)
       .call()
     console.log('useNFTBalance::fetchNFTBalance balance:', balance)
     setNFTBalance(balance)

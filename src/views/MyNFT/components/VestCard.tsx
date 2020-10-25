@@ -22,7 +22,7 @@ interface StyledCardWrapperProps {
 
 const VESTCard: React.FC<VESTCardProps> = ({ info, tab }) => {
   const { image, name, attributes, rewardStatus, claimId, tokenId, acc } = info
-  const bestCost = attributes.find(trait  => trait.trait_type === 'Vest Value').value
+  const bestCost = attributes.find(trait  => trait.trait_type === 'Best Value').value
   const level = attributes.find(trait => trait.trait_type === 'Level').value.toString()
   const type = attributes.find(trait => trait.trait_type === 'Type').value.toString()
   const backgroundColor = attributes.find(trait => trait.trait_type === 'Main Color').value.toString()

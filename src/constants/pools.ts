@@ -33,7 +33,7 @@ export const Pools = [
         isWBNB: false,
         icon: 'busd-bnb',
         nftSymbol: 'VEST',
-        magnification: 1,
+        magnification: 3,
     },
     {
         poolAddresses: {

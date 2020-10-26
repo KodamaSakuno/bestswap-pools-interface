@@ -117,7 +117,7 @@ const Balances: React.FC = () => {
         </Footnote>
       </Card>
       <Spacer />
-      <Card>
+      {/* <Card>
         <CardContent>
           <Label text="Total BEST Supply" />
           <Value
@@ -128,7 +128,7 @@ const Balances: React.FC = () => {
           New rewards per block
           <FootnoteValue>1,000 <span style={{ color: '#FFD201' }}>BEST</span></FootnoteValue>
         </Footnote>
-      </Card>
+      </Card> */}
     </StyledWrapper>
   )
 }

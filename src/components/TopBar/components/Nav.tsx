@@ -6,7 +6,7 @@ const Nav: React.FC = () => {
   return (
     <StyledNav>
       <StyledLink exact activeClassName="active" to="/home">
-        Home
+        Harvest
       </StyledLink>
       <StyledLink exact activeClassName="active" to="/farms">
         Menu
@@ -20,17 +20,19 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/referral">
         Referral
       </StyledLink>
+      <StyledAbsoluteLink href="https://bsc.bestswap.com/#/lge">LGE</StyledAbsoluteLink>
       {/* <StyledLink exact activeClassName="active" to="/shop">
         Shop
       </StyledLink>
       <StyledLink exact activeClassName="active" to="/nfts">
         NFTs
       </StyledLink> */}
+      <StyledAbsoluteLink href="https://lge.bestswap.com">LGE</StyledAbsoluteLink>
       <StyledAbsoluteLink
-        href="https://peaceful-panini-8ac107.netlify.app/#/swap"
+        href="/swap"
         target="_blank"
       >
-        Swap
+        Back Home
       </StyledAbsoluteLink>
     </StyledNav>
   )

@@ -16,6 +16,7 @@ import useMyNFT from '../../hooks/useMyNFT'
 import VESTCards from './components/VestCards'
 import AcceleratorABI from '../../constants/abi/StakingRewardAccelerator.json'
 import { ACC } from '../../constants/acc'
+import { NFTLength } from '../../constants/vestNFTs' 
 
 interface MetadataWithStatus extends VestMetadata {
   rewardStatus: boolean
@@ -27,7 +28,13 @@ interface MetadataWithStatus extends VestMetadata {
 }
 
 const switcherList = ['pending', 'received', 'staked']
-const tokenList: Array<TokenItem> = [
+const a = Array.from({length: NFTLength},(item, index)=> index+1).map((v) => {
+  return {
+      tokenId: v
+  }
+})
+const tokenList: Array<TokenItem> = a
+/* [
   {
     tokenId: 1,
   },
@@ -37,7 +44,7 @@ const tokenList: Array<TokenItem> = [
   {
     tokenId: 3,
   },
-]
+] */
 
 const findAssetsByType = (
   name: string,
@@ -118,6 +125,7 @@ const MyNFTPage: React.FC = () => {
       // @ts-ignore
       const NFTId = await accelerator.methods.getStaked(account).call()
       const list = findAssetsByType(name, metadataList, rewardStatus, tokenList, NFTBalance, NFTId)
+      console.log('handleSwitcherChange:: list', list)
       setSelectedList(list)
     },
     [account, NFTBalance, metadataList, rewardStatus],

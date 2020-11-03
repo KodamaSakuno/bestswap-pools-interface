@@ -24,7 +24,7 @@ import MyNFT from './views/MyNFT'
 const App: React.FC = () => {
   return (
     <Providers>
-      <Router>
+      <Router basename="/farm">
         <Switch>
           <Route path="/" exact>
             <Start />

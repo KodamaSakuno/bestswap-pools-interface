@@ -37,6 +37,36 @@ export const Pools = [
     },
     {
         poolAddresses: {
+            56: '0xcb3395e55bEa88707D06A9EaB9D722F56951ffcB',
+        },
+        stakingTokenAddresses: {
+            56: '0xe58f66ff94ddd41ce62c2e8624c2a441405342d5',
+        },
+        name: 'BEST',
+        symbol: 'BEST',
+        tokenSymbol: 'BEST',
+        isWBNB: false,
+        icon: 'best',
+        nftSymbol: 'VEST',
+        magnification: 1,
+    },    
+    {
+        poolAddresses: {
+            56: '0x649CAc73BA593fE7e70171eEB48A0EcF0320Bf34',
+        },
+        stakingTokenAddresses: {
+            56: '0x6D2ADaC45a9e1C19a2e54f73D6FBbDFccD366b57',
+        },
+        name: 'BEST/BUSD_LP',
+        symbol: 'BEST/BUSD_LP',
+        tokenSymbol: 'BNB/BUSD_LP',
+        isWBNB: false,
+        icon: 'best-bnb',
+        nftSymbol: 'VEST',
+        magnification: 8,
+    },    
+    {
+        poolAddresses: {
             97: '0x65a68e572154EE7266C1c4d990d4BBdDfCF6b7db',
         },
         stakingTokenAddresses: {

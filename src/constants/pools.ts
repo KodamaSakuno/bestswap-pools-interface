@@ -37,10 +37,25 @@ export const Pools = [
     },
     {
         poolAddresses: {
-            56: '0xcb3395e55bEa88707D06A9EaB9D722F56951ffcB',
+            56: '0x649CAc73BA593fE7e70171eEB48A0EcF0320Bf34',
         },
         stakingTokenAddresses: {
-            56: '0xe58f66ff94ddd41ce62c2e8624c2a441405342d5',
+            56: '0x6D2ADaC45a9e1C19a2e54f73D6FBbDFccD366b57',
+        },
+        name: 'BUSD/BEST_LP',
+        symbol: 'BUSD/BEST_LP',
+        tokenSymbol: 'BUSD/BEST_LP',
+        isWBNB: false,
+        icon: 'busd-best',
+        nftSymbol: 'VEST',
+        magnification: 8,
+    },
+    {
+        poolAddresses: {
+            56: '0xBf3385219B22b84B739027956C49dEbE6a957dE3',
+        },
+        stakingTokenAddresses: {
+            56: '0x10747e2045a0ef884a0586AC81558F43285ea3c7',
         },
         name: 'BEST',
         symbol: 'BEST',
@@ -48,35 +63,6 @@ export const Pools = [
         isWBNB: false,
         icon: 'best',
         nftSymbol: 'VEST',
-        magnification: 1,
+        magnification: '?',
     },    
-    {
-        poolAddresses: {
-            56: '0x649CAc73BA593fE7e70171eEB48A0EcF0320Bf34',
-        },
-        stakingTokenAddresses: {
-            56: '0x6D2ADaC45a9e1C19a2e54f73D6FBbDFccD366b57',
-        },
-        name: 'BEST/BUSD_LP',
-        symbol: 'BEST/BUSD_LP',
-        tokenSymbol: 'BNB/BUSD_LP',
-        isWBNB: false,
-        icon: 'best-bnb',
-        nftSymbol: 'VEST',
-        magnification: 8,
-    },    
-    {
-        poolAddresses: {
-            97: '0x65a68e572154EE7266C1c4d990d4BBdDfCF6b7db',
-        },
-        stakingTokenAddresses: {
-            97: '0x917BfF8755793D0f3b9628032Ca01C7fF97BA89e',
-        },
-        name: 'BUSD/BNB',
-        symbol: 'BUSD/BNB',
-        tokenSymbol: 'BUSD/BNB',
-        isWBNB: false,
-        icon: 'busd-bnb',
-        magnification: 3,
-    },
 ]

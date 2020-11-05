@@ -20,14 +20,13 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/referral">
         Referral
       </StyledLink>
-      <StyledAbsoluteLink href="https://bsc.bestswap.com/#/lge">LGE</StyledAbsoluteLink>
       {/* <StyledLink exact activeClassName="active" to="/shop">
         Shop
       </StyledLink>
       <StyledLink exact activeClassName="active" to="/nfts">
         NFTs
       </StyledLink> */}
-      <StyledAbsoluteLink href="https://lge.bestswap.com">LGE</StyledAbsoluteLink>
+      <StyledAbsoluteLink target="_blank" href="https://lge.bestswap.com/#/lge">LGE</StyledAbsoluteLink>
       <StyledAbsoluteLink
         href="/swap"
         target="_blank"

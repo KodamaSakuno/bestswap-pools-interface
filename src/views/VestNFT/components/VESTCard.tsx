@@ -13,7 +13,7 @@ interface StyledCardWrapperProps {
 
 const VESTCard: React.FC<VESTCardProps> = ({ info }) => {
   const { image_url, traits, name, background_color } = info
-  const bestCost = traits.find(trait => trait.trait_type === 'Vest Value').value || 0
+  const bestCost = traits.find(trait => trait.trait_type === 'Best Value').value || 0
   const level = traits.find(trait => trait.trait_type === 'Level').value || '1'
   const displayLevel = (level: string): string => {
     const _level = Number(level)

@@ -9,7 +9,7 @@ const useRefReward = () => {
     const { account, ethereum } = useWallet()
 
     const contract = useMemo(() => {
-      return getContract(ethereum as provider, '0xe346173a7C151EEbAC3EF2E8811C94a41365a15C')
+      return getContract(ethereum as provider, '0x6692D5a360a7Bdc178B276c8e2CaFEf578ea1718')
     }, [ethereum])
 
     const fetchRewardStatus = useCallback(async () => {

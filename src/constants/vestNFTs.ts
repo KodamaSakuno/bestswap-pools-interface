@@ -177,7 +177,7 @@ export const VestNFTs: VestNFTs = {
   ],
 }
 
-export const VestNFTAddress = '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf'
+export const VestNFTAddress = '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8'
 
 export const VestNFTList: Array<NftAssets> = [
   {
@@ -191,7 +191,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Usopp',
     description: 'Usopp',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -214,7 +214,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -234,7 +234,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Portgas D Ace',
     description: 'Portgas D. Ace',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -257,7 +257,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -277,7 +277,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Monkey D. Luffy',
     description: 'Monkey D. Luffy',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -300,7 +300,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -320,7 +320,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Tashigi',
     description: 'Tashigi',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -343,7 +343,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -363,7 +363,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Smoker',
     description: 'Smoker',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -386,7 +386,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -406,7 +406,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Kuzan',
     description: 'Kuzan',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -429,7 +429,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -449,7 +449,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Emporio Ivankov',
     description: 'Emporio Ivankov',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -472,7 +472,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -492,7 +492,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Koala',
     description: 'Koala',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -515,7 +515,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -535,7 +535,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Monkey D. Dragon',
     description: 'Monkey D. Dragon',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -558,7 +558,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -578,7 +578,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Coupon',
     description: 'Coupon',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -601,7 +601,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -621,7 +621,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Book',
     description: 'Book',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -644,7 +644,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -664,7 +664,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Medal',
     description: 'Medal',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -687,7 +687,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -707,7 +707,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Pirate',
     description: 'Pirate',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -730,7 +730,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -750,7 +750,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Yonko',
     description: 'Yonko',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -773,7 +773,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -793,7 +793,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'One Piece',
     description: 'One Piece',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -816,7 +816,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -836,7 +836,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Smoke Fruit',
     description: 'Smoke Fruit',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -859,7 +859,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -879,7 +879,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Sand-Sand Fruit',
     description: 'Sand-Sand Fruit',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -902,7 +902,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -922,7 +922,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Mera-Mera Fruit',
     description: 'Mera-Mera Fruit',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -945,7 +945,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -966,7 +966,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Hawkeye',
     description: 'Hawkeye',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -989,7 +989,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -1009,7 +1009,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Bear',
     description: 'Bear',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -1032,7 +1032,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -1052,7 +1052,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Jinbei',
     description: 'Jinbei',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -1075,7 +1075,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -1096,7 +1096,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Sengohu',
     description: 'Sengohu',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -1119,7 +1119,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '100',
         display_type: null,
         max_value: null,
@@ -1139,7 +1139,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Grrp',
     description: 'Grrp',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -1162,7 +1162,7 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
         value: '1000',
         display_type: null,
         max_value: null,
@@ -1182,7 +1182,7 @@ export const VestNFTList: Array<NftAssets> = [
     name: 'Issho',
     description: 'Issho',
     asset_contract: {
-      address: '0xdcf2a17bf95840bbe513ce2d9030bb03191570cf',
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
       name: 'Meme',
       symbol: 'MEME',
     },
@@ -1205,7 +1205,136 @@ export const VestNFTList: Array<NftAssets> = [
         order: null,
       },
       {
-        trait_type: 'Vest Value',
+        trait_type: 'Best Value',
+        value: '10000',
+        display_type: null,
+        max_value: null,
+        trait_count: 1,
+        order: null,
+      },
+    ],
+  },
+  {
+    id: 25,
+    token_id: 25,
+    background_color: '#eaa36d',
+    image_url: 'local::hat.png',
+    image_preview_url: null,
+    image_thumbnail_url: null,
+    image_original_url: null,
+    name: 'Straw Hat',
+    description: 'Straw Hat',
+    asset_contract: {
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
+      name: 'Meme',
+      symbol: 'MEME',
+    },
+    decimals: null,
+    traits: [
+      {
+        trait_type: 'Level',
+        value: 1,
+        display_type: null,
+        max_value: null,
+        trait_count: 0,
+        order: null,
+      },
+      {
+        trait_type: 'Type',
+        value: 'timestamp',
+        display_type: null,
+        max_value: null,
+        trait_count: 4,
+        order: null,
+      },
+      {
+        trait_type: 'Best Value',
+        value: '100',
+        display_type: null,
+        max_value: null,
+        trait_count: 1,
+        order: null,
+      },
+    ],
+  },
+  {
+    id: 26,
+    token_id: 26,
+    background_color: '#d5dae0',
+    image_url: 'local::wado.png',
+    image_preview_url: null,
+    image_thumbnail_url: null,
+    image_original_url: null,
+    name: 'Wado Ichimonji',
+    description: 'Wado Ichimonji',
+    asset_contract: {
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
+      name: 'Meme',
+      symbol: 'MEME',
+    },
+    decimals: null,
+    traits: [
+      {
+        trait_type: 'Level',
+        value: 2,
+        display_type: null,
+        max_value: null,
+        trait_count: 0,
+        order: null,
+      },
+      {
+        trait_type: 'Type',
+        value: 'timestamp',
+        display_type: null,
+        max_value: null,
+        trait_count: 4,
+        order: null,
+      },
+      {
+        trait_type: 'Best Value',
+        value: '1000',
+        display_type: null,
+        max_value: null,
+        trait_count: 1,
+        order: null,
+      },
+    ],
+  },
+  {
+    id: 27,
+    token_id: 27,
+    background_color: '#969696',
+    image_url: 'local::merry.png',
+    image_preview_url: null,
+    image_thumbnail_url: null,
+    image_original_url: null,
+    name: 'Going Merry',
+    description: 'Going Merry',
+    asset_contract: {
+      address: '0x9c07A44E2dC4A80d4B4d60e45Dfd5FaA29D283A8',
+      name: 'Meme',
+      symbol: 'MEME',
+    },
+    decimals: null,
+    traits: [
+      {
+        trait_type: 'Level',
+        value: 3,
+        display_type: null,
+        max_value: null,
+        trait_count: 0,
+        order: null,
+      },
+      {
+        trait_type: 'Type',
+        value: 'timestamp',
+        display_type: null,
+        max_value: null,
+        trait_count: 4,
+        order: null,
+      },
+      {
+        trait_type: 'Best Value',
         value: '10000',
         display_type: null,
         max_value: null,
@@ -1215,3 +1344,5 @@ export const VestNFTList: Array<NftAssets> = [
     ],
   },
 ]
+
+export const NFTLength: number = 18

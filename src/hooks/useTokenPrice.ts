@@ -19,7 +19,7 @@ export function useTokenPriceInBNB(tokenAddress: string, decimals: number|string
     // use BigNumber, format them at the display part please
     const [ priceInBNB, updatePriceInBNB ] = useState("0")
     // 97 stands for bsc testnet
-    const networkId = 97
+    const networkId = 56
     const contract = useMemo(() => {
         return getSwapRouter(ethereum as provider, address[networkId])
     }, [ethereum])

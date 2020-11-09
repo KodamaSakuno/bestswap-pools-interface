@@ -26,8 +26,9 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/nfts">
         NFTs
       </StyledLink> */}
+      <StyledAbsoluteLink target="_blank" href="https://lge.bestswap.com/#/lge">LGE</StyledAbsoluteLink>
       <StyledAbsoluteLink
-        href="https://peaceful-panini-8ac107.netlify.app/#/swap"
+        href="/swap"
         target="_blank"
       >
         Back Home

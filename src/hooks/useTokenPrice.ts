@@ -133,7 +133,7 @@ export function useTokenPriceInBUSD(tokenAddress: string, decimals: number|strin
             updatePriceInBUSD(oneUnitOfToken.toString())
             return
         }
-if (isLp) {
+        if (isLp) {
             // LP 做特殊处理
             const pairContract = getPairContract(ethereum as provider, tokenAddress);
                 // rewardRate = reward for every second staking
@@ -195,7 +195,7 @@ if (isLp) {
         } catch (error) {
             console.error('unable to fetch price for: ' + tokenAddress)
         }
-    }, [contract, tokenAddress, isLp, oneUnitOfToken])
+    }, [contract, tokenAddress, isLp, oneUnitOfToken, ethereum])
 
 
     useEffect(() => {

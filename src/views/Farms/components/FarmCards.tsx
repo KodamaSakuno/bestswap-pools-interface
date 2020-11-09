@@ -19,7 +19,7 @@ import { getEarned, getMasterChefContract } from '../../../sushi/utils'
 import { bnToDec } from '../../../utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 import useDecimals from '../../../hooks/useDecimals'
-import { useTokenPriceInBNB, useTokenPriceInBUSD } from '../../../hooks/useTokenPrice'
+import { useTokenPriceInBNB } from '../../../hooks/useTokenPrice'
 import { usePoolApy } from '../../../hooks/useFarmApy'
 
 interface FarmWithStakedValue extends Farm, StakedValue {

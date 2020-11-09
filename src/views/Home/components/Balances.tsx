@@ -73,6 +73,7 @@ const PendingRewards: React.FC = () => {
 }
 
 const Balances: React.FC = () => {
+  // eslint-disable-next-line
   const [totalSupply, setTotalSupply] = useState<BigNumber>()
   const best = useBest()
   const sushiBalance = useTokenBalance(best.address)

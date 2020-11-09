@@ -104,7 +104,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   const { stakingTokenAddress, poolAddress, earnTokenAddress, pid, name: symbol } = farm
   const decimalsOfStaking = useDecimals(stakingTokenAddress)
   const decimalsOfEarn = useDecimals(earnTokenAddress)
-  const { priceInBNB: tokenPriceOfStaking } = useTokenPriceInBNB(stakingTokenAddress, decimalsOfStaking)
+  const { priceInBNB: tokenPriceOfStaking } = useTokenPriceInBNB(stakingTokenAddress, decimalsOfStaking, farm.isLp)
+  // const { priceInBUSD: tokenPriceOfStaking } = useTokenPriceInBUSD(stakingTokenAddress, decimalsOfStaking, farm.isLp)
   const { priceInBNB: tokenPriceOfEarn } = useTokenPriceInBNB(earnTokenAddress, decimalsOfEarn)
 
   const { apy } = usePoolApy(poolAddress, tokenPriceOfEarn, tokenPriceOfStaking, decimalsOfEarn, decimalsOfStaking)

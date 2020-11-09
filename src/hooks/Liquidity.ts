@@ -43,18 +43,11 @@ export async function useTotalLiquidity(pair: string) {
 }
 
 
-export function useEstimateTotalLiquidtyIn({ 
+export function useEstimateTotalLiquidtyInBNB({ 
     reserve0, reserve1, token0, token1, decimal0, decimal1
 }: { reserve0: string, reserve1: string, token0: string, token1: string, 
     decimal0: string | number, decimal1: string | number } // typing for destruct args
 ) {
-        // const { account, ethereum } = useWallet()
-
-        // const networkId = 56
-        // const contract = useMemo(() => {
-        //     return getSwapRouter(ethereum as provider, address[networkId])
-        // }, [ethereum])
-
         const { priceInBNB: token0Price } = useTokenPriceInBNB(token0, decimal0)
         const { priceInBNB: token1Price } = useTokenPriceInBNB(token1, decimal1)
 
@@ -75,5 +68,3 @@ export function useEstimateTotalLiquidtyIn({
 
         return totalLiquidity
 }
-
-// export const useTotalLiquidityInBNB = (liquidityPool: string) => useTotalLiquidityIn(WBNB[56], liquidityPool)

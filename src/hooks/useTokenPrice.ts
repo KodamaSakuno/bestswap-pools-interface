@@ -6,8 +6,6 @@ import { getSwapRouter } from '../utils/swapRouter'
 import { getTotalLiquidityInBNB } from './Liquidity'
 import { address } from '../constants/swap'
 import { ADDRESS_ZERO, WBNB, BUSD } from '../constants/addresses'
-import { getPairContract } from '../utils/pair'
-import { BigNumber } from '../sushi'
 // import { BigNumber } from "../sushi";
 
 // const { BigNumber } = utils

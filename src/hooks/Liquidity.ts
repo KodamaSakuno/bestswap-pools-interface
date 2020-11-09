@@ -5,7 +5,6 @@ import { useWallet } from 'use-wallet'
 import { useTokenPriceInBNB } from './useTokenPrice'
 import { getSwapRouter } from '../utils/swapRouter'
 import { address } from '../constants/swap'
-import { ADDRESS_ZERO, WBNB } from '../constants/addresses'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import BigNumber from 'bignumber.js'
 

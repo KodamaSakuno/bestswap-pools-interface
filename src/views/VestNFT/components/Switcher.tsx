@@ -60,7 +60,7 @@ const StyledSwitcherLine = styled.div`
 `
 
 const StyledSwitcherItem = styled.div<SwitcherItemProps>`
-  color: ${props => props.isActive ? '#FEC600' : '#E5E5E5'};
+  color: ${props => props.isActive ? '#FEC600' : '#686868'};
   font-size: 14px;
   font-weight: 600;
   text-align: center;

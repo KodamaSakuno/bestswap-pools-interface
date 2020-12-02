@@ -12,6 +12,7 @@ const StyledCard = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 `
 
 export default Card

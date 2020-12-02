@@ -34,7 +34,7 @@ const Page: React.FC<PageProps> = ({ children, showBgColor = true }) => {
 }
 
 const StyledPage = styled.div<StyledPageProps>`
-  background-color: ${props => props.showBg ? 'rgba(0,0,0,0.4)' : 'transparent'};
+  /* background-color: ${props => props.showBg ? 'rgba(0,0,0,0.4)' : 'transparent'}; */
 `
 
 const StyledMain = styled.div`

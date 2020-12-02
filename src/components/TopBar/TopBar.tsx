@@ -32,7 +32,8 @@ const TopBar: React.FC<TopBarProps> = ({ onPresentMobileMenu }) => {
 const StyledLogoWrapper = styled.div``
 
 const StyledTopBar = styled.div`
-  background-color: rgba(8,8,8,0.25);
+  background-color: #fff;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.67);
 `
 
 const StyledTopBarInner = styled.div`

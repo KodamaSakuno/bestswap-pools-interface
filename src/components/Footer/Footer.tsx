@@ -41,7 +41,7 @@ const partnersList = [
 const Footer: React.FC = () => (
   <StyledFooter>
     <StyledFooterInner>
-      <StyledFooterItem style={{ alignItems: 'flex-start', marginBottom: 80 }}>
+      <StyledFooterItem style={{ alignItems: 'flex-start', marginBottom: 20 }}>
         <StyledFooterItemTitle>Partners:</StyledFooterItemTitle>
         <StyledFooterItemContennt>
           <StyledFooterItemContenntGrid>
@@ -69,6 +69,8 @@ const StyledFooter = styled.footer`
   align-items: center;
   display: flex;
   justify-content: center;
+  background: #12161c;
+  box-shadow: 0px -3px 11px 0px rgba(0, 0, 0, 0.38);
 `
 const StyledFooterInner = styled.div`
   /* align-items: center; */
@@ -77,7 +79,7 @@ const StyledFooterInner = styled.div`
   /* height: ${props => props.theme.topBarSize}px; */
   max-width: ${props => props.theme.siteWidth}px;
   width: 100%;
-  padding: 10px 15px 40px;
+  padding: 34px 15px 34px;
   box-sizing: border-box;
 `
 

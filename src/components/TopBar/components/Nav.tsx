@@ -43,16 +43,16 @@ const StyledNav = styled.nav`
 `
 
 const StyledLink = styled(NavLink)`
-  color: ${(props) => props.theme.color.yellow};
+  color: #959595;
   font-weight: normal;
   padding-left: ${(props) => props.theme.spacing[3]}px;
   padding-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
   &:hover {
-    color: ${(props) => props.theme.color.white};
+    color: ${(props) => props.theme.color.black};
   }
   &.active {
-    color: ${(props) => props.theme.color.white};
+    color: ${(props) => props.theme.color.black};
     font-weight: bold;
   }
   @media (max-width: 400px) {
@@ -62,16 +62,16 @@ const StyledLink = styled(NavLink)`
 `
 
 const StyledAbsoluteLink = styled.a`
-  color: ${(props) => props.theme.color.yellow};
+  color: #959595;
   font-weight: normal;
   padding-left: ${(props) => props.theme.spacing[3]}px;
   padding-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
   &:hover {
-    color: ${(props) => props.theme.color.white};
+    color: ${(props) => props.theme.color.black};
   }
   &.active {
-    color: ${(props) => props.theme.color.white};
+    color: ${(props) => props.theme.color.black};
     font-weight: bold;
   }
   @media (max-width: 400px) {

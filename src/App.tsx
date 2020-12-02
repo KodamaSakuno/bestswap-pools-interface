@@ -24,7 +24,7 @@ import MyNFT from './views/MyNFT'
 const App: React.FC = () => {
   return (
     <Providers>
-      <Router basename="/farm">
+      <Router basename={'farm'}>
         <Switch>
           <Route path="/" exact>
             <Start />
@@ -66,15 +66,15 @@ const Providers: React.FC = ({ children }) => {
           walletconnect: { rpcUrl: 'https://bsc-dataseed.binance.org/' },
         }}
       >
-          <TransactionProvider>
-            <FarmsProvider>
-              <NFTsProvider>
-                <AcceleratorsProvider>
-                  <ModalsProvider>{children}</ModalsProvider>
-                </AcceleratorsProvider>
-              </NFTsProvider>
-            </FarmsProvider>
-          </TransactionProvider>
+        <TransactionProvider>
+          <FarmsProvider>
+            <NFTsProvider>
+              <AcceleratorsProvider>
+                <ModalsProvider>{children}</ModalsProvider>
+              </AcceleratorsProvider>
+            </NFTsProvider>
+          </FarmsProvider>
+        </TransactionProvider>
       </UseWalletProvider>
     </ThemeProvider>
   )

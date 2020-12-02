@@ -45,7 +45,6 @@ const VestNFTPage: React.FC = () => {
 }
 
 const StyledPageWrapper = styled.div`
-  background-color: rgba(8,8,8,0.4);
   width: 100%;
   height: 100%;
   position: absolute;

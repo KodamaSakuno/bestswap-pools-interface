@@ -1,14 +1,40 @@
 body {
-  background: #360904;
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./assets/img/bestswap-bg.png');
-  background-position: top;
-  background-size: cover;
   background-repeat: repeat-y;
+  min-height: 100vh;
+  background-color: #FAF9FA;
+  background-size:
+  auto 20px,
+  auto 20px,
+  auto 38px,
+  auto 42px,
+  auto 20px,
+  auto 20px,
+  auto 20px,
+  auto 42px;
+  background-position:
+  20px 200px,
+  200px 360px,
+  0 600px,
+  140px 900px,
+  100% 100px,
+  calc(100% - 60px) 300px,
+  calc(100% - 170px) 470px,
+  calc(100% - 40px) 700px;
+  background-repeat: no-repeat;
+  background-image:
+    url('./assets/img/yun.png'),
+    url('./assets/img/yun.png'),
+    url('./assets/img/yun.png'),
+    url('./assets/img/yun.png'),
+    url('./assets/img/yun.png'),
+    url('./assets/img/yun.png'),
+    url('./assets/img/yun.png'),
+    url('./assets/img/yun.png');
 }
 
 code {

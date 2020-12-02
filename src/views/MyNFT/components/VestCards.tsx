@@ -73,7 +73,7 @@ const StyledSpacer = styled.div`
 `
 
 const StyledH1 = styled.h1`
-  color: #fff;
+  color: #222;
   text-align: center;
   font-size: 32px;
   font-weight: normal;
